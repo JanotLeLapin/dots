@@ -1,0 +1,44 @@
+* {
+  outline: none;
+  border: none;
+
+  --bg-1: #0f172a;
+  --bg-2: #1e293b;
+  --fg-1: #334155;
+  --fg-2: #64748b;
+}
+
+#window {
+  background: #2b2e3b;
+}
+
+#input {
+  background: #414558;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#input:focus {
+  color: #f1f5f9;
+}
+
+#inner-box {
+  padding: 1rem;
+}
+
+#entry {
+  color: #94a3b8;
+  border-radius: 1rem;
+  margin: .5rem 0;
+  transition: background 250ms ease-out;
+}
+
+#entry:selected {
+  color: #f1f5f9;
+  background: #363949;
+}
+
+#img {
+  margin: .5rem 1rem;
+}

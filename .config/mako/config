@@ -1,0 +1,19 @@
+font=Roboto 10
+background-color=#0f172a
+text-color=#e2e8f0
+
+padding=10
+
+border-color=#6366f1
+border-radius=4
+
+icons=0
+
+[urgency=low]
+border-color=#10b981
+
+[urgency=normal]
+border-color=#f59e0b
+
+[urgency=high]
+border-color=#ef4444
