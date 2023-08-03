@@ -1,10 +1,10 @@
-{ inputs, config, pkgs, ... }:
+{ lib, inputs, config, pkgs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-    ];
+    ] ++ lib.optional (builtins.pathExists ./nvidia.nix) ./nvidia.nix;
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -42,30 +42,17 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # NVIDIA
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  hardware.nvidia = {
-    open = true;
-    nvidiaSettings = true;
-    modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
+  # hardware.opengl = {
+    # enable = true;
+    # driSupport = true;
+    # driSupport32Bit = true;
+  # };
 
   # Hyprland
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
-    nvidiaPatches = true;
   };
 
   services.pipewire = {
@@ -75,12 +62,6 @@
   # X11
   services.xserver = {
     enable = true;
-
-    videoDrivers = ["nvidia"];
-
-    # screenSection = ''
-    #   Option "metamodes" "HDMI-0: nvidia-auto-select +3440+360, DP-0: nvidia-auto-select +0+0"
-    # '';
 
     desktopManager = {
       xterm.enable = false;
