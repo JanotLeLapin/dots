@@ -136,6 +136,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       git gh feh nitch home-manager
+      pulseaudio-ctl brightnessctl
       buildkit docker-compose
       firefox tor-browser-bundle-bin webcord pavucontrol
       layan-gtk-theme tela-circle-icon-theme volantes-cursors
