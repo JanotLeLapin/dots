@@ -140,7 +140,7 @@
       buildkit docker-compose
       firefox tor-browser-bundle-bin webcord pavucontrol
       layan-gtk-theme tela-circle-icon-theme volantes-cursors
-      gammastep kitty pcmanfm wofi waybar hyprpaper
+      gammastep kitty pcmanfm wofi waybar mako hyprpaper
       minecraft
     ];
   };
