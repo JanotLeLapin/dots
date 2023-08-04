@@ -1,5 +1,23 @@
 { lib, inputs, config, pkgs, ... }:
 
+let 
+  configure-gtk = pkgs.writeTextFile {
+    name = "configure-gtk";
+    destination = "/bin/configure-gtk";
+    executable = true;
+    text = let
+      schema = pkgs.gsettings-desktop-schemas;
+      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+    in ''
+      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+      gnome_schema=org.gnome.desktop.interface
+      gsettings set $gnome_schema gtk-theme 'Layan-Dark'
+      gsettings set $gnome_schema icon-theme 'Tela-circle-dark'
+      gsettings set $gnome_schema font-name 'Roboto'
+    '';
+  };
+
+in
 {
   imports =
     [
@@ -135,11 +153,11 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      git gh feh nitch home-manager
+      git nitch home-manager
       pulseaudio-ctl brightnessctl
       buildkit docker-compose
-      firefox tor-browser-bundle-bin webcord pavucontrol
-      layan-gtk-theme tela-circle-icon-theme volantes-cursors
+      firefox webcord pavucontrol
+      layan-gtk-theme tela-circle-icon-theme configure-gtk
       gammastep kitty pcmanfm wofi waybar mako hyprpaper
       minecraft
     ];
@@ -150,7 +168,7 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    gcc wget unzip
+    gcc wget unzip glib
     neovim ripgrep
   ];
 
