@@ -9,5 +9,9 @@
         defaultbranch = "main";
       };
     };
+
+    delta = {
+      enable = true;
+    };
   };
 }
