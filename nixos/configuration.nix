@@ -118,10 +118,6 @@ in
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
-  # Geoclue
-  services.geoclue2.enable = true;
-  location.provider = "geoclue2";
-
   # Fonts
   fonts = {
     packages = with pkgs; [
@@ -158,13 +154,15 @@ in
       buildkit docker-compose
       firefox webcord pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
-      gammastep kitty pcmanfm wofi waybar mako hyprpaper
+      kitty pcmanfm wofi waybar mako hyprpaper
       minecraft
+      (pkgs.makeDesktopItem {
+        name = "discord";
+        exec = "${pkgs.discord}/bin/discord --use-gl=desktop";
+        desktopName = "Discord";
+      })
     ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
