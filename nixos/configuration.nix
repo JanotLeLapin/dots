@@ -152,7 +152,7 @@ in
       git nitch home-manager
       pulseaudio-ctl brightnessctl
       buildkit docker-compose
-      firefox webcord pavucontrol
+      firefox pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
       kitty pcmanfm wofi waybar mako hyprpaper
       minecraft
@@ -160,6 +160,7 @@ in
         name = "discord";
         exec = "${pkgs.discord}/bin/discord --use-gl=desktop";
         desktopName = "Discord";
+        icon = "${pkgs.tela-circle-icon-theme}/share/icons/Tela-circle/scalable/apps/discord.svg";
       })
     ];
   };
