@@ -1,6 +1,8 @@
+local theme_name, _ = require("janotlelapin/colors")()
+
 require("lualine").setup {
   options = {
     icons_enabled = true,
-    theme = "tokyonight"
+    theme = theme_name
   }
 }

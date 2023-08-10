@@ -66,5 +66,6 @@ require("lazy").setup {
     opts = {},
   },
 
-  "folke/tokyonight.nvim",
+  -- "folke/tokyonight.nvim",
+  "navarasu/onedark.nvim",
 }
