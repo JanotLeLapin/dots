@@ -14,12 +14,6 @@ imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 ]]
 
-vim.keymap.set("i", "<Tab>", function() return ls.expand_or_jumpable() and "<Plug>luasnip-expand-or-jump" or "<Tab>" end, {silent = true, expr = true})
-vim.keymap.set("s", "<Tab>", function() return ls.jumpable(1) and "<Plug>luasnip-jump-next" or "<Tab>" end, {silent = true, expr = true})
-
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() return ls.jumpable(-1) and "<Plug>luasnip-jump-prev" or "<S-Tab>" end, {silent = true, expr = true})
-vim.keymap.set({"i", "s"}, "<C-F>", function() return ls.choice_active() and "<Plug>luasnip-next-choice" or "<C-f>" end, {silent = true, expr = true})
-
 ls.config.set_config {
   enable_autosnippets = true,
   store_selection_keys = "<Tab>"
