@@ -55,6 +55,16 @@ require("lazy").setup {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {},
+  },
 
   "folke/tokyonight.nvim",
 }
