@@ -49,6 +49,16 @@ require("lazy").setup {
     opts = {},
   },
   "lukas-reineke/indent-blankline.nvim",
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 
   "folke/tokyonight.nvim",
 }
