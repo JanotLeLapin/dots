@@ -24,10 +24,6 @@ require("lazy").setup {
   "saadparwaiz1/cmp_luasnip",
   "mfussenegger/nvim-jdtls",
   {
-    "williamboman/mason.nvim",
-    opts = {},
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
