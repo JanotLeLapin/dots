@@ -12,23 +12,7 @@ local on_attach = function(client, bufnr)
 end
 
 local config = {
-  cmd = {
-    "java",
-    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
-    "-Dosgi.bundles.defaultStartLevel=4",
-    "-Declipse.product=org.eclipse.jdt.ls.core.product",
-    "-Dlog.protocol=true",
-    "-Dlog.level=ALL",
-    "-Xmx4g",
-    "-javaagent:" .. jdt_dir .. "/lombok.jar",
-    -- "-Xbootclasspath/a:" .. jdt_dir .. "/lombok.jar",
-    "--add-modules=ALL-SYSTEM",
-    "--add-opens", "java.base/java.util=ALL-UNNAMED",
-    "--add-opens", "java.base/java.lang=ALL-UNNAMED",
-    "-jar", jdt_dir .. "/plugins/org.eclipse.equinox.launcher_1.6.500.v20230622-2056.jar",
-    "-configuration", jdt_dir .. "/config_linux",
-    "-data", jdt_dir .. "/workspace/" .. project_name
-  },
+  cmd = { "java-language-server", project_name },
   root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
   settings = {
     java = {
