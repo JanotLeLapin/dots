@@ -8,7 +8,7 @@ if theme_name == "tokyonight" then
   vim.cmd[[colorscheme tokyonight]]
 elseif theme_name == "onedark" then
   theme.setup {
-    style = "deep",
+    style = "cool",
     term_colors = true,
     code_style = {
       comments = 'italic',
@@ -21,4 +21,28 @@ elseif theme_name == "onedark" then
     },
   }
   theme.load()
+elseif theme_name == "catppuccin" then
+  theme.setup {
+    flavour = "macchiato",
+    term_colors = true,
+    integrations = {
+      barbar = true,
+      barbecue = {
+        dim_dirname = true,
+        bold_basename = true,
+      },
+      styles = {
+        keywords = { "italic" },
+      },
+      cmp = true,
+      telescope = true,
+      treesitter = true,
+    },
+    custom_highlights = function(colors)
+      return {
+        Pmenu = { bg = colors.crust },
+      }
+    end,
+  }
+  vim.cmd[[colorscheme catppuccin]]
 end
