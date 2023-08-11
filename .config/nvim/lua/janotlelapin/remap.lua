@@ -1,4 +1,6 @@
 -- Luasnip
+local ls = require("luasnip")
+
 vim.keymap.set("i", "<Tab>", function() return ls.expand_or_jumpable() and "<Plug>luasnip-expand-or-jump" or "<Tab>" end, {silent = true, expr = true})
 vim.keymap.set("s", "<Tab>", function() return ls.jumpable(1) and "<Plug>luasnip-jump-next" or "<Tab>" end, {silent = true, expr = true})
 
