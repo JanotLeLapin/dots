@@ -1,21 +1,21 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
+	"modules-left": ["custom/launcher","tray"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight","pulseaudio","clock", "battery","custom/power"],
+	"modules-right": ["battery","pulseaudio","clock"],
 
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
-		"format": "{icon} {volume}%",
-		"format-muted": "{icon} {volume}%",
+		"format": "{icon}  {volume}%",
+		"format-muted": "{icon}  {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
 		}
 	},
   "hyprland/workspaces": {
-    "format": "{id}",
+    "format": "",
   },
 	"network": {
 		"tooltip": false,
@@ -36,8 +36,8 @@
       "critical": 20
     },
     "format": "{icon}  {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", ""]
   },
@@ -46,7 +46,7 @@
 		"spacing": 10
 	},
   "clock": {
-    "format": "{: %I:%M %p  %d/%m/%Y}"
+    "format": "{:  %I:%M}"
   },
   "cpu": {
     "interval": 15,

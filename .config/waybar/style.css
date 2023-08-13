@@ -1,13 +1,18 @@
+@define-color fg-main rgb(248, 250, 252);
+@define-color fg-sec  rgb(229, 231, 235);
+@define-color bg-main rgb(17,  24,  39);
+@define-color bg-sec  rgb(55,  65,  81);
+
 * {
 	border: none;
-	border-radius: 10;
-  font-family: "JetbrainsMono Nerd Font" ;
-	font-size: 15px;
-	min-height: 10px;
+  font-family: "Font Awesome";
+	font-size: 12px;
+	min-height: 0px;
 }
 
 window#waybar {
-	background: transparent;
+	background: rgba(17, 24, 39, 0.5);
+  border-bottom: 1px solid @bg-main;
 }
 
 window#waybar.hidden {
@@ -15,83 +20,41 @@ window#waybar.hidden {
 }
 
 #window {
-	margin-top: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 10px;
 	transition: none;
   color: transparent;
-	background: transparent;
 }
 
 #workspaces {
-	margin-top: 6px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
+  font-size: 0;
+  background-color: @bg-main;
+  margin: .3rem;
+  padding: .3rem 0;
 	border-radius: 999px;
-	background: transparent;
-	transition: none;
 }
 
 #workspaces button {
   border-radius: 999px;
-  margin: 0 .5rem;
-  color: #cdb5e1;
-  background: #1e293b;
+  margin: 0 .3rem;
+  background: @bg-sec;
   transition: all 250ms ease-in-out;
 }
 
 #workspaces button.active {
   padding: 0 1.5rem;
-  color: #1e293b;
-  background: #cbd5e1;
-}
-
-#network {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #bd93f9;
+  background: #9ca3af;
 }
 
 #pulseaudio {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #1A1826;
-	background: #FAE3B0;
+	color: @fg-sec;
+  margin: 0 1rem;
 }
 
 #battery {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #B5E8E0;
-}
-
-#battery.charging, #battery.plugged {
-	color: #161320;
-  background-color: #B5E8E0;
+	color: @fg-sec;
+  margin: 0 1rem;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #B5E8E0;
-  color: #161320;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -101,127 +64,29 @@ window#waybar.hidden {
 
 @keyframes blink {
   to {
-    background-color: #BF616A;
-    color: #B5E8E0;
+    opacity: 0;
   }
 }
 
-#backlight {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F8BD96;
-}
-#clock {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #ABE9B3;
-	/*background: #1A1826;*/
-}
-
-#memory {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #DDB6F2;
-}
-#cpu {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #96CDFB;
-}
-
 #tray {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #B5E8E0;
+	color: @fg-sec;
+  margin: 0 1rem;
 }
 
 #custom-launcher {
-	font-size: 24px;
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 10px;
-	transition: none;
-  color: #89DCEB;
-  background: #161320;
+  color: @fg-main;
+  background: @bg-main;
+	font-size: 16px;
+  padding: .2rem 1rem;
+  margin-right: 1rem;
+	border-radius: 0 24px 0 0;
 }
 
-#custom-power {
-	font-size: 20px;
-	margin-top: 6px;
-	margin-left: 8px;
-	margin-right: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F28FAD;
-}
-
-#custom-wallpaper {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #C9CBFF;
-}
-
-#custom-updates {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #E8A2AF;
-}
-
-#custom-media {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F2CDCD;
+#clock {
+	color: @fg-main;
+	background: @bg-main;
+  font-weight: bold;
+  padding: .2rem 1.4rem;
+  margin-left: 1rem;
+	border-radius: 0 0 0 24px;
 }

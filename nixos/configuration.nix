@@ -156,7 +156,8 @@ in
       noto-fonts-emoji
       roboto
       victor-mono
-      (nerdfonts.override { fonts = ["JetBrainsMono" ]; })
+      font-awesome
+      (nerdfonts.override { fonts = ["JetBrainsMono"]; })
     ];
     fontconfig = {
       defaultFonts = {
