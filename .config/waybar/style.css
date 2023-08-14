@@ -6,8 +6,7 @@
 * {
 	border: none;
   font-family: "Font Awesome";
-	font-size: 12px;
-	min-height: 0px;
+	min-height: 0;
 }
 
 window#waybar {
@@ -25,33 +24,34 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  font-size: 0;
   background-color: @bg-main;
-  margin: .3rem;
-  padding: .3rem 0;
+  margin: .4rem;
+  padding: .4rem 0;
 	border-radius: 999px;
 }
 
 #workspaces button {
+  font-size: 0;
   border-radius: 999px;
-  margin: 0 .3rem;
+  padding: .5rem .5rem;
+  margin: 0 .4rem;
   background: @bg-sec;
   transition: all 250ms ease-in-out;
 }
 
 #workspaces button.active {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   background: #9ca3af;
 }
 
 #pulseaudio {
 	color: @fg-sec;
-  margin: 0 1rem;
+  margin: 0 1rem .2rem;
 }
 
 #battery {
 	color: @fg-sec;
-  margin: 0 1rem;
+  margin: 0 1rem .2rem;
 }
 
 #battery.critical:not(.charging) {
@@ -70,23 +70,23 @@ window#waybar.hidden {
 
 #tray {
 	color: @fg-sec;
-  margin: 0 1rem;
+  margin: 0 1rem .2rem;
 }
 
 #custom-launcher {
   color: @fg-main;
   background: @bg-main;
 	font-size: 16px;
-  padding: .2rem 1rem;
+  padding: 0 1rem .2rem;
   margin-right: 1rem;
-	border-radius: 0 24px 0 0;
+	border-radius: 0 20px 0 0;
 }
 
 #clock {
 	color: @fg-main;
 	background: @bg-main;
   font-weight: bold;
-  padding: .2rem 1.4rem;
+  padding: 0 1.4rem .2rem;
   margin-left: 1rem;
-	border-radius: 0 0 0 24px;
+	border-radius: 0 0 0 20px;
 }
