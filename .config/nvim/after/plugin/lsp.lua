@@ -85,7 +85,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end
 })
 
-languages = { "tsserver", "rust_analyzer", "clangd" }
+languages = {
+  "tsserver", "rust_analyzer", "clangd",
+  "astro",
+}
 for i, v in ipairs(languages) do
   lsp[v].setup { capabilities = capabilities }
 end
