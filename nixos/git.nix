@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   programs.git = {
     enable = true;
@@ -6,10 +7,9 @@
     userEmail = "joseph300905@gmail.com";
     extraConfig = {
       init = {
-        defaultbranch = "main";
+        defaultBranch = "main";
       };
     };
-
     delta = {
       enable = true;
     };

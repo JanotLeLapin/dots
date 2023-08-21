@@ -51,6 +51,7 @@ in
 {
   imports =
     [
+      ./home.nix
       ./hardware-configuration.nix
     ] ++ lib.optional (builtins.pathExists ./nvidia.nix) ./nvidia.nix;
 
