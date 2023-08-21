@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Channels
 sudo nix-channel --add https://channels.nixos.org/nixos-unstable
 
