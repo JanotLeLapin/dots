@@ -149,6 +149,8 @@ in
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
+  hardware.bluetooth.enable = true;
+
   # Fonts
   fonts = {
     packages = with pkgs; [
@@ -182,7 +184,7 @@ in
     shell = pkgs.zsh;
     packages = with pkgs; [
       git nitch home-manager
-      pulseaudio-ctl brightnessctl
+      pulseaudio-ctl brightnessctl blueberry
       buildkit docker-compose
       firefox pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
