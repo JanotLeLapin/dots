@@ -19,8 +19,8 @@ return {
   s({trig = ",p", snippetType="autosnippet"}, { t("\\pi") }),
   s({trig = ",S", snippetType="autosnippet"}, { t("\\Sigma") }),
   s({trig = ",s", snippetType="autosnippet"}, { t("\\sigma") }),
-  s({trig = ",P", snippetType="autosnippet"}, { t("\\Phi") }),
-  s({trig = ",p", snippetType="autosnippet"}, { t("\\phi") }),
+  s({trig = ",F", snippetType="autosnippet"}, { t("\\Phi") }),
+  s({trig = ",f", snippetType="autosnippet"}, { t("\\phi") }),
   s({trig = ",O", snippetType="autosnippet"}, { t("\\Omega") }),
   s({trig = ",o", snippetType="autosnippet"}, { t("\\Omega") }),
 
