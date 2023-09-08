@@ -68,4 +68,7 @@ return {
   s({trig = ";v", snippetType="autosnippet"}, {
     t("\\overrightarrow{"), i(1), t("}")
   }),
+  s({trig = ";d", snippetType="autosnippet"}, {
+    t("\\overline{"), i(1), t("}")
+  })
 }
