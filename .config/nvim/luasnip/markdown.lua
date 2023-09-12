@@ -1,5 +1,7 @@
 local ls = require("luasnip")
 
+vim.opt.wrap = true
+
 return {
   -- Greek letters
   s({trig = ",A", snippetType="autosnippet"}, { t("\\Alpha") }),
