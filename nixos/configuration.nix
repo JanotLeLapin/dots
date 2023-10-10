@@ -61,24 +61,10 @@ in
   ];
 
   # Bootloader
-  boot.loader.grub = {
+  boot.loader.systemd-boot = {
     enable = true;
-    useOSProber = true;
-    efiSupport = true;
-    device = "nodev";
-    theme = pkgs.stdenv.mkDerivation {
-      pname = "distro-grub-themes";
-      version = "3.1";
-      src = pkgs.fetchFromGitHub {
-        owner = "AdisonCavani";
-        repo = "distro-grub-themes";
-        rev = "v3.1";
-        hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-      };
-      installPhase = "cp -r customize/nixos $out";
-    };
+    configurationLimit = 2;
   };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
   networking.hostName = "nixos"; # Define your hostname.
@@ -202,8 +188,9 @@ in
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
+    bash
     gcc wget unzip glib
-    neovim ripgrep
+    neovim helix ripgrep
   ];
 
   # Allow unfree packages
