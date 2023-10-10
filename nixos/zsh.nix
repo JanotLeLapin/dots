@@ -19,12 +19,14 @@
 
       # Nix
       ns = "nix-shell --run zsh";
+      nd = "nix develop -c $SHELL";
       nsp = "nix-shell --run zsh -p";
 
       # Other
       l = "ls -a";
       c = "clear";
       v = "nvim";
+      h = "helix";
     };
     history = {
       size = 1000;
