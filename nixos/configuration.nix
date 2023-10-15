@@ -174,7 +174,7 @@ in
       buildkit docker-compose
       firefox pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
-      kitty pcmanfm wofi waybar mako hyprpaper
+      kitty pcmanfm wofi waybar mako hyprpaper lsd
       java-language-server
       minecraft
       (pkgs.makeDesktopItem {

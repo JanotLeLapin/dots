@@ -23,7 +23,7 @@
       nsp = "nix-shell --run zsh -p";
 
       # Other
-      l = "ls -a";
+      l = "lsd -a";
       c = "clear";
       v = "nvim";
       h = "helix";
