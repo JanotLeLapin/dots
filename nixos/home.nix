@@ -9,6 +9,7 @@
     imports = [
       ./git.nix
       ./kitty.nix
+      ./zellij.nix
       ./zsh.nix
     ];
 

@@ -170,11 +170,11 @@ in
     shell = pkgs.zsh;
     packages = with pkgs; [
       git nitch home-manager
-      pulseaudio-ctl brightnessctl blueberry
+      pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin
       buildkit docker-compose
       firefox pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
-      kitty pcmanfm wofi waybar mako hyprpaper lsd
+      kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
       java-language-server
       minecraft
       (pkgs.makeDesktopItem {
