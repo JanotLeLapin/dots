@@ -172,7 +172,7 @@ in
       git nitch home-manager
       pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin
       buildkit docker-compose
-      firefox pavucontrol
+      opera pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
       kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
       java-language-server
