@@ -5,6 +5,9 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
+      keybinds = {
+        unbind = "Ctrl q";
+      };
       theme = "mocha";
       themes = {
         mocha = {
