@@ -102,7 +102,6 @@ in
   # Hyprland
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
   };
 
@@ -170,9 +169,9 @@ in
     shell = pkgs.zsh;
     packages = with pkgs; [
       git nitch home-manager
-      pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin
+      pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin shotman
       buildkit docker-compose
-      opera pavucontrol
+      pavucontrol
       layan-gtk-theme tela-circle-icon-theme configure-gtk
       kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
       java-language-server
@@ -183,6 +182,7 @@ in
         desktopName = "Discord";
         icon = "${pkgs.tela-circle-icon-theme}/share/icons/Tela-circle/scalable/apps/discord.svg";
       })
+      (opera.override { proprietaryCodecs = true; })
     ];
   };
 
