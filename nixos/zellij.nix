@@ -6,7 +6,7 @@
     enableZshIntegration = true;
     settings = {
       keybinds = {
-        unbind = "Ctrl q";
+        unbind = ["Ctrl q" "Ctrl s"];
       };
       theme = "mocha";
       themes = {
