@@ -1,0 +1,6 @@
+#!/bin/sh
+
+spawn kitty
+
+riverctl map normal Super Return spawn kitty
+riverctl map normal Super Q close

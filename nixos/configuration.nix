@@ -105,6 +105,9 @@ in
     xwayland.enable = true;
   };
 
+  # River
+  programs.river.enable = true;
+
   services.pipewire = {
     enable = true;
   };
@@ -118,7 +121,7 @@ in
     };
 
     displayManager = {
-      defaultSession = "hyprland";
+      defaultSession = "river";
       gdm = {
         enable = true;
         wayland = true;
