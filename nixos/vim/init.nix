@@ -12,9 +12,13 @@
       cmp-cmdline.enable = true;
       cmp_luasnip.enable = true;
       luasnip.enable = true;
+      nvim-autopairs.enable = true;
       treesitter.enable = true;
 
       telescope = import ./plugins/telescope.nix;
+      lualine = import ./plugins/lualine.nix;
+      barbecue.enable = true;
+      barbar.enable = true;
     };
   };
 }
