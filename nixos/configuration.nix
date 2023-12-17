@@ -1,52 +1,7 @@
 { lib, inputs, config, pkgs, ... }:
 
-let 
-  configure-gtk = pkgs.writeTextFile {
-    name = "configure-gtk";
-    destination = "/bin/configure-gtk";
-    executable = true;
-    text = let
-      schema = pkgs.gsettings-desktop-schemas;
-      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-    in ''
-      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-      gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Layan-Dark'
-      gsettings set $gnome_schema icon-theme 'Tela-circle-dark'
-      gsettings set $gnome_schema font-name 'Roboto'
-    '';
-  };
-  java-language-server = pkgs.writeTextFile {
-    name = "java-language-server";
-    destination = "/bin/java-language-server";
-    executable = true;
-    text = let
-      jdt_dir = pkgs.jdt-language-server;
-      config_dir = "$HOME/.cache/jdtls";
-      lombok_dir = pkgs.lombok;
-    in ''
-      mkdir ${config_dir}
-      cp ${jdt_dir}/share/config/config.ini ${config_dir}
-
-      mkdir $HOME/workspace
-
-      java \
-      -Declipse.application=org.eclipse.jdt.ls.core.id1 \
-      -Dosgi.bundles.defaultStartLevel=4 \
-      -Declipse.product=org.eclipse.jdt.ls.core.product \
-      -Dlog.protocol=true \
-      -Dlog.level=ALL \
-      -Xmx4g \
-      -javaagent:${lombok_dir}/share/java/lombok.jar \
-      --add-modules=ALL-SYSTEM \
-      --add-opens java.base/java.util=ALL-UNNAMED \
-      --add-opens java.base/java.lang=ALL-UNNAMED \
-      -jar ${jdt_dir}/share/java/plugins/org.eclipse.equinox.launcher_*.jar \
-      -configuration ${config_dir} \
-      -data $HOME/workspace/$1
-    '';
-  };
-
+let
+  packages = inputs: (paths: (map (p: import p inputs) paths));
 in
 {
   imports =
@@ -175,18 +130,11 @@ in
       pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin shotman
       buildkit docker-compose
       pavucontrol
-      layan-gtk-theme tela-circle-icon-theme configure-gtk
+      layan-gtk-theme tela-circle-icon-theme
       kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
-      java-language-server
       minecraft
-      (pkgs.makeDesktopItem {
-        name = "discord";
-        exec = "${pkgs.discord}/bin/discord --use-gl=desktop";
-        desktopName = "Discord";
-        icon = "${pkgs.tela-circle-icon-theme}/share/icons/Tela-circle/scalable/apps/discord.svg";
-      })
       (opera.override { proprietaryCodecs = true; })
-    ];
+    ] ++ ((packages pkgs) [./packages/jdtls.nix ./packages/gtk.nix ./packages/discord.nix]);
   };
 
   # List packages installed in system profile
