@@ -13,6 +13,8 @@
       cmp_luasnip.enable = true;
       luasnip.enable = true;
       treesitter.enable = true;
+
+      telescope = import ./plugins/telescope.nix;
     };
   };
 }
