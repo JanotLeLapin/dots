@@ -189,7 +189,7 @@ in
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     bash
-    gcc wget unzip glib
+    gcc wget unzip glib toybox
     neovim helix ripgrep
   ];
 
