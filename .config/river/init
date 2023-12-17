@@ -18,8 +18,9 @@ riverctl map normal Super+Shift K swap previous
 
 riverctl map normal Super Space toggle-float
 
-riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" natural-scroll enabled
-riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" tap enabled
+touchpad=$(riverctl list-inputs | grep "Touchpad")
+riverctl input $touchpad natural-scroll enabled
+riverctl input $touchpad tap enabled
 
 riverctl border-color-unfocused 0x94a3b8
 riverctl border-color-focused 0xa78bfa
