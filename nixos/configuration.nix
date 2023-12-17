@@ -140,7 +140,7 @@ in
   environment.systemPackages = with pkgs; [
     bash
     gcc wget unzip glib toybox
-    neovim helix ripgrep
+    helix ripgrep
   ];
 
   # Allow unfree packages
