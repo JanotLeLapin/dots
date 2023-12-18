@@ -41,10 +41,10 @@ in
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
     wofi = import ./pkgs/wofi;
-    zellij = import ./pkgs/zellij;
+    zellij = (import ./pkgs/zellij inputs);
     zsh = (import ./pkgs/zsh inputs);
   };
   services = {
-    mako = import ./pkgs/mako;
+    mako = (import ./pkgs/mako inputs);
   };
 }

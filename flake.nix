@@ -19,6 +19,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = import ./theme.nix;
           home-manager.users.josephd = import ./home.nix;
         }
         nixvim.nixosModules.nixvim (import ./pkgs/vim)
