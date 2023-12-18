@@ -124,16 +124,6 @@ in
     description = "Joseph DALY";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      git nitch home-manager
-      pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin shotman
-      buildkit docker-compose
-      pavucontrol
-      layan-gtk-theme tela-circle-icon-theme
-      kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
-      minecraft
-      (opera.override { proprietaryCodecs = true; })
-    ] ++ (packages [./packages/jdtls.nix ./packages/gtk.nix ./packages/discord.nix]);
   };
 
   # List packages installed in system profile
