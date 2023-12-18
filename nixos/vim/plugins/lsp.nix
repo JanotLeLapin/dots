@@ -5,8 +5,8 @@
       gd = "definition";
       gr = "references";
       gt = "type_definition";
-      K = "hover";
-      R = "rename";
+      "<leader>k" = "hover";
+      "<leader>r" = "rename";
     };
   };
   servers = {
