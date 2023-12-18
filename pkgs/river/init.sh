@@ -33,3 +33,5 @@ do
   riverctl map normal Super ${workspaceKeys[i]} set-focused-tags $tags
   riverctl map normal Super+Shift ${workspaceKeys[i]} set-view-tags $tags
 done
+
+riverctl spawn mako
