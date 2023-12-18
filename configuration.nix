@@ -1,8 +1,5 @@
 { lib, config, pkgs, ... } @ inputs:
 
-let
-  packages = paths: (map (p: import p inputs) paths);
-in
 {
   imports =
     [
