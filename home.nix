@@ -46,6 +46,7 @@ in
   programs = {
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
+    vscode = (import ./pkgs/vscode inputs);
     wofi = (import ./pkgs/wofi inputs);
     zellij = import ./pkgs/zellij;
     zsh = (import ./pkgs/zsh inputs);
