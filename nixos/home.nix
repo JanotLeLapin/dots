@@ -17,14 +17,13 @@ in
       EDITOR = "nvim";
     };
     packages = with pkgs; [
-      git nitch home-manager
-      pulseaudio-ctl brightnessctl blueberry tor-browser-bundle-bin shotman
-      buildkit docker-compose
-      pavucontrol
-      layan-gtk-theme tela-circle-icon-theme
-      kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
+      nitch lsd pulseaudio-ctl brightnessctl # CLI tools
+      pcmanfm waybar pavucontrol layan-gtk-theme tela-circle-icon-theme # GUI
+      buildkit docker-compose # Docker
+
+      # Misc
       minecraft
-      (opera.override { proprietaryCodecs = true; })
+      (opera.override { proprietaryCodecs = true; }) tor-browser-bundle-bin
     ] ++ (importPaths extraPackages);
   };
   programs = {
