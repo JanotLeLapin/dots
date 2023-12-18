@@ -1,26 +1,21 @@
 * {
   outline: none;
   border: none;
-
-  --bg-1: #0f172a;
-  --bg-2: #1e293b;
-  --fg-1: #334155;
-  --fg-2: #64748b;
 }
 
 #window {
-  background: #2b2e3b;
+  background: __bg-0__;
 }
 
 #input {
-  background: #414558;
-  border-radius: 1rem;
+  color: __fg-2__;
+  background: __bg-1__;
   padding: 1rem;
   margin: 1rem;
 }
 
 #input:focus {
-  color: #f1f5f9;
+  color: __fg-0__;
 }
 
 #inner-box {
@@ -28,15 +23,13 @@
 }
 
 #entry {
-  color: #94a3b8;
-  border-radius: 1rem;
+  color: __fg-1__;
   margin: .5rem 0;
-  transition: background 250ms ease-out;
 }
 
 #entry:selected {
-  color: #f1f5f9;
-  background: #363949;
+  color: __fg-0__;
+  background: __bg-1__;
 }
 
 #img {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... } @ inputs:
+{ config, pkgs, specialArgs, ... } @ inputs:
 
 let
   extraPackages = [
@@ -31,7 +31,7 @@ in
         target = ".config/zellij/layouts/default.kdl";
       };
       river = {
-        source = ./pkgs/river/init.sh;
+        text = specialArgs.format "0x" ./pkgs/river/init.sh;
         target = ".config/river/init";
         executable = true;
       };
@@ -40,8 +40,8 @@ in
   programs = {
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
-    wofi = import ./pkgs/wofi;
-    zellij = (import ./pkgs/zellij inputs);
+    wofi = (import ./pkgs/wofi inputs);
+    zellij = import ./pkgs/zellij;
     zsh = (import ./pkgs/zsh inputs);
   };
   services = {

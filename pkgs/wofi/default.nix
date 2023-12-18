@@ -1,3 +1,5 @@
+{ specialArgs, ... }:
+
 {
   enable = true;
   settings = {
@@ -9,5 +11,5 @@
     no_actions = true;
     allow_images = true;
   };
-  style = (builtins.readFile ./style.css);
+  style = specialArgs.format "#" ./style.css;
 }

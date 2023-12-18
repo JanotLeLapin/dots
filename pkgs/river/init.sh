@@ -22,8 +22,8 @@ touchpad=$(riverctl list-inputs | grep "Touchpad")
 riverctl input $touchpad natural-scroll enabled
 riverctl input $touchpad tap enabled
 
-riverctl border-color-unfocused 0x94a3b8
-riverctl border-color-focused 0xa78bfa
+riverctl border-color-unfocused __bg-2__
+riverctl border-color-focused __main-0__
 riverctl border-width 2
 
 workspaceKeys=(ampersand eacute quotedbl apostrophe parenleft minus egrave underscore ccedilla agrave)
