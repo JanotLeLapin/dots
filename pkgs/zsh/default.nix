@@ -20,6 +20,7 @@
     ns = "nix-shell --run zsh";
     nd = "nix develop -c $SHELL";
     nsp = "nix-shell --run zsh -p";
+    nr = "sudo nixos-rebuild switch --impure --flake";
 
     # Other
     l = "lsd -a";
