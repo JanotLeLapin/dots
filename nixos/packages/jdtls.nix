@@ -1,4 +1,5 @@
-pkgs:
+{ pkgs, ... }:
+
 pkgs.writeTextFile {
   name = "java-language-server";
   destination = "/bin/java-language-server";

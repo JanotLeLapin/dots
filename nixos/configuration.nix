@@ -1,7 +1,7 @@
-{ lib, inputs, config, pkgs, ... }:
+{ lib, config, pkgs, ... } @ inputs:
 
 let
-  packages = inputs: (paths: (map (p: import p inputs) paths));
+  packages = paths: (map (p: import p inputs) paths);
 in
 {
   imports =
@@ -133,7 +133,7 @@ in
       kitty pcmanfm wofi waybar mako hyprpaper lsd zellij
       minecraft
       (opera.override { proprietaryCodecs = true; })
-    ] ++ ((packages pkgs) [./packages/jdtls.nix ./packages/gtk.nix ./packages/discord.nix]);
+    ] ++ (packages [./packages/jdtls.nix ./packages/gtk.nix ./packages/discord.nix]);
   };
 
   # List packages installed in system profile

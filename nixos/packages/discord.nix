@@ -1,4 +1,5 @@
-pkgs:
+{ pkgs, ... }:
+
 pkgs.makeDesktopItem {
   name = "discord";
   exec = "${pkgs.discord}/bin/discord --use-gl=desktop";
