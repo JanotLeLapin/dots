@@ -25,6 +25,12 @@ in
       minecraft
       (opera.override { proprietaryCodecs = true; }) tor-browser-bundle-bin
     ] ++ (importPaths extraPackages);
+    file = {
+      zellijLayout = {
+        source = ./pkgs/zellij/layout.kdl;
+        target = ".config/zellij/layouts/default.kdl";
+      };
+    };
   };
   programs = {
     git = import ./pkgs/git;
