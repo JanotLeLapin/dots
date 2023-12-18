@@ -4,6 +4,8 @@
     enable = true;
     colorschemes = import ./colorschemes.nix;
     keymaps = import ./keymaps.nix;
+    options = import ./options.nix;
+    globals = { mapleader = " "; };
     plugins = {
       lsp = import ./plugins/lsp.nix;
       nvim-cmp = import ./plugins/cmp.nix;
