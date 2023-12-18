@@ -34,4 +34,7 @@ in
     zellij = import ./pkgs/zellij;
     zsh = (import ./pkgs/zsh inputs);
   };
+  services = {
+    mako = import ./pkgs/mako;
+  };
 }
