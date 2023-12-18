@@ -30,6 +30,7 @@ in
   programs = {
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
+    wofi = import ./pkgs/wofi;
     zellij = import ./pkgs/zellij;
     zsh = (import ./pkgs/zsh inputs);
   };
