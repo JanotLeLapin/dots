@@ -15,11 +15,6 @@
     clangd.enable = true;
     pylsp.enable = true;
     elixirls.enable = true;
-    rust-analyzer = {
-      enable = true;
-      installCargo = true;
-      installRustc = true;
-    };
 
     # Web frameworks
     astro.enable = true;

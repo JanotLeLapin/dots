@@ -18,6 +18,8 @@
       nvim-autopairs.enable = true;
       treesitter.enable = true;
 
+      rust-tools.enable = true;
+
       telescope = import ./plugins/telescope.nix;
       lualine = import ./plugins/lualine.nix;
       barbecue.enable = true;
