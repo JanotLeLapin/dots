@@ -30,6 +30,11 @@ in
         source = ./pkgs/zellij/layout.kdl;
         target = ".config/zellij/layouts/default.kdl";
       };
+      river = {
+        source = ./pkgs/river/init.sh;
+        target = ".config/river/init";
+        executable = true;
+      };
     };
   };
   programs = {
