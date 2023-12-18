@@ -34,6 +34,7 @@ in
         text = specialArgs.format "0x" ./pkgs/river/init.sh;
         target = ".config/river/init";
         executable = true;
+        onChange = "sh -c $HOME/.config/river/init";
       };
 
       wallpaper = {

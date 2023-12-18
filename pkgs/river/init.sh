@@ -5,6 +5,7 @@ riverctl keyboard-layout fr
 riverctl spawn rivertile
 riverctl output-layout rivertile
 
+riverctl map normal Super F toggle-fullscreen
 riverctl map normal Super E exit
 riverctl map normal Super Q close
 riverctl map normal Super D spawn "wofi --show drun"
