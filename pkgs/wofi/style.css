@@ -1,17 +1,20 @@
 * {
   outline: none;
   border: none;
+  border-radius: 0;
 }
 
-#window {
-  background: __bg-0__;
+window {
+  background-color: __bg-0__;
+  font-family: 'Victor Mono', monospace;
 }
 
 #input {
   color: __fg-2__;
-  background: __bg-1__;
-  padding: 1rem;
-  margin: 1rem;
+  background-color: __bg-2__;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 6px;
 }
 
 #input:focus {
@@ -19,19 +22,16 @@
 }
 
 #inner-box {
-  padding: 1rem;
+  font-size: 16px;
 }
 
 #entry {
-  color: __fg-1__;
-  margin: .5rem 0;
+  color: __fg-2__;
+  font-weight: 600;
+  padding: 8px 16px;
 }
 
 #entry:selected {
   color: __fg-0__;
-  background: __bg-1__;
-}
-
-#img {
-  margin: .5rem 1rem;
+  background-color: __bg-1__;
 }
