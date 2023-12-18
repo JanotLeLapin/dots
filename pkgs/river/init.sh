@@ -35,3 +35,4 @@ do
 done
 
 riverctl spawn mako
+riverctl spawn "swaybg -i $HOME/.wallpaper"

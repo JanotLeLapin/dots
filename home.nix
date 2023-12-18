@@ -17,7 +17,7 @@ in
       EDITOR = "nvim";
     };
     packages = with pkgs; [
-      nitch lsd pulseaudio-ctl brightnessctl # CLI tools
+      nitch lsd pulseaudio-ctl brightnessctl swaybg # CLI tools
       pcmanfm waybar pavucontrol layan-gtk-theme tela-circle-icon-theme # GUI
       buildkit docker-compose # Docker
 
@@ -34,6 +34,11 @@ in
         text = specialArgs.format "0x" ./pkgs/river/init.sh;
         target = ".config/river/init";
         executable = true;
+      };
+
+      wallpaper = {
+        source = ./wallpaper.png;
+        target = ".wallpaper";
       };
     };
   };
