@@ -7,5 +7,4 @@
       };
     };
   };
-  keymaps = { "<C-f>" = "find_files"; };
 }

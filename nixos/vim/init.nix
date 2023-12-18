@@ -3,6 +3,7 @@
   programs.nixvim = {
     enable = true;
     colorschemes = import ./colorschemes.nix;
+    keymaps = import ./keymaps.nix;
     plugins = {
       lsp = import ./plugins/lsp.nix;
       nvim-cmp = import ./plugins/cmp.nix;
