@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# NixOS
-sudo rm -rf /etc/nixos
-sudo ln -s $HOME/nixos /etc/nixos
+# Generate hardware config
 sudo nixos-generate-config
-git add --intent-to-add $HOME/nixos/hardware-configuration.nix
-sudo nixos-rebuild switch --impure
+cp /etc/nixos/hardware-configuration.nix .
+git add --intent-to-add ./hardware-configuration.nix
+
+sudo nixos-rebuild switch --flake . --impure
