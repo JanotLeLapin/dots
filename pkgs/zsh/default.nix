@@ -7,13 +7,13 @@
     gst = "git status";
     gd = "git diff";
     glog = "git log";
-
     ga = "git add";
     gaa = "git add .";
     gcm = "git commit -m";
     gca = "git commit --amend --no-edit";
     gcam = "git commit --amend -m";
-
+    gr = "git restore";
+    gra = "git restore .";
     gp = "git push";
 
     # Nix
