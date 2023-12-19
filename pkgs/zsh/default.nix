@@ -17,9 +17,9 @@
     gp = "git push";
 
     # Nix
-    ns = "nix-shell --run zsh";
     nd = "nix develop -c $SHELL";
-    nsp = "nix-shell --run zsh -p";
+    ns = "nix shell";
+    nsp = "nix shell";
     nr = "sudo nixos-rebuild switch --impure --flake";
 
     # SSH
