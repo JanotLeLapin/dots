@@ -26,16 +26,8 @@ in
       (opera.override { proprietaryCodecs = true; }) tor-browser-bundle-bin
     ] ++ (importPaths extraPackages);
     file = {
-      zellijLayout = {
-        source = ./pkgs/zellij/layout.kdl;
-        target = ".config/zellij/layouts/default.kdl";
-      };
-      river = {
-        text = specialArgs.format "0x" ./pkgs/river/init.sh;
-        target = ".config/river/init";
-        executable = true;
-        onChange = "sh -c $HOME/.config/river/init";
-      };
+      river = import ./pkgs/river inputs;
+      zellijLayout = import ./pkgs/zellij/layout.nix;
 
       wallpaper = {
         source = ./wallpaper.png;
