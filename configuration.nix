@@ -44,15 +44,9 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # hardware.opengl = {
-    # enable = true;
-    # driSupport = true;
-    # driSupport32Bit = true;
-  # };
-
   # Hyprland
   programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
   };
 
