@@ -22,6 +22,10 @@
     nsp = "nix-shell --run zsh -p";
     nr = "sudo nixos-rebuild switch --impure --flake";
 
+    # SSH
+    ssag = "ssh-add /run/secrets/ssh/github";
+    ssac = "ssh-add /run/secrets/ssh/github";
+
     # Other
     l = "lsd -a";
     c = "clear";

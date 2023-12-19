@@ -58,6 +58,9 @@
     wireplumber.enable = true;
   };
 
+  # OpenSSH
+  programs.ssh.startAgent = true;
+
   # X11
   services.xserver = {
     enable = true;
