@@ -47,6 +47,7 @@ in
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
     vscode = (import ./pkgs/vscode inputs);
+    waybar = (import ./pkgs/waybar inputs);
     wofi = (import ./pkgs/wofi inputs);
     zellij = import ./pkgs/zellij;
     zsh = (import ./pkgs/zsh inputs);
