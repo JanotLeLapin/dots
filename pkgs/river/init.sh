@@ -38,4 +38,9 @@ done
 riverctl spawn mako
 riverctl spawn "swaybg -i $HOME/.wallpaper"
 
+riverctl map normal None XF86AudioRaiseVolume spawn "pulseaudio-ctl up"
+riverctl map normal None XF86AudioLowerVolume spawn "pulseaudio-ctl down"
+riverctl map normal None XF86MonBrightnessUp spawn "brightnessctl set +10%"
+riverctl map normal None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
+
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
