@@ -11,6 +11,7 @@ in
     secrets = {
       "ssh/github" = default;
       "ssh/codeberg" = default;
+      "ssh/atf" = default;
     };
   };
 }
