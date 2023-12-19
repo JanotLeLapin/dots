@@ -9,9 +9,13 @@
       url = "github:nix-community/nixvim";
     	inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, nixvim, sops-nix, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
@@ -23,6 +27,7 @@
           home-manager.users.josephd = import ./home.nix;
         }
         nixvim.nixosModules.nixvim (import ./pkgs/vim)
+        sops-nix.nixosModules.sops (import ./keys)
       ];
     };
   };

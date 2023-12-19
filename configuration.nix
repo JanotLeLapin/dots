@@ -127,7 +127,7 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    bash gcc wget unzip glib ripgrep
+    bash gcc wget unzip glib ripgrep sops
   ];
 
   # Allow unfree packages

@@ -1,0 +1,23 @@
+ssh:
+    github: ENC[AES256_GCM,data:zquJCLojxHyeMVgqEw9532RgspLiwRjOJhUAI4PMY2YuVX/HjeNZtokCUSLMEn+EwMGZ7ZOdsBHxBjSWq9Bsr+qGt/AYJy7JY5+xhurCxPmFI0qOHU3BQd8h7UXv76Qw4cZzHgpINDeuR3x67pgq1anEmyI58+nGbgNmJ9WpPZmw+S1pToKrPANM72tuzQzLwn5q4iOxVrVxYwo75IDqzG7y6/hQ6HgXO60rwqVjcYLsJOjqaJI6x05JWtVOTnOVYAKFXg7NgpEwjdqVfWzxXOm9g7ZwSJZTDdBDNpoHIxQ8BPqUzAqc9aYL3ihwewtxbnAWtGC/BOSoICXTK24DCmmsqs4KEfZKSK2/fIegAyXHWXaNVp2HcqhjlJ8lyYfJutG73pDR17nwDfBb/h1HLTO9w6Nn6sRjnWNjHphR46DFjP7yjPFEaqXNB8FTtJRzkJAjeN+vcGKh17sMhYlwNjSyThdiD8CPW/CyoOFRqY+vRgY3tMjePFMaVPJ9BrVSAu1Hpbo/tDHkA4Vt0j1TQ3fijnFR3Ly92X88yX1a0Cal4Za2GfRHeGk6ZCS+v8GavRDbXnZXEAdnv7OA+uh6F08/yD2uk+L12ICOAV4+zZM=,iv:y5fmditLrzU8wKC3Teg1yJKFgtFbRMTCqzLtXNng4Ss=,tag:bY47AVI0oHh8zTer5Fjsag==,type:str]
+    codeberg: ENC[AES256_GCM,data:1tqCF9s917mpBYo37Tkk3u4K9YIsJgAqvQ8UPqe0odT/3W7Qd8wp6tFTK45WEj5KTXXUYfFRSKmkqi2AWkCQj1ZLZpreFd1mgrx66p8RWwhZTcBHPlosQ563a7w9NYTj30QJR29w8DDHZAxq7Sa210pvC+AkL2Vdn4OKIOtDls9Z7Pedc3VE92qzNE3EWzVet0EZYI7pFcBtfcuTfWUTnDw9kVT/xcTM/dnuDylY4bajjr71oAlWxJaLXyXHc5e5r6foIfKmL+rOp8dCYm7p67paHDksDxY3vEO8+iWqEGqEX+aDMPP0SYgdzfyS8huR5bzPq3C2XgZl34TWUobZtw8Fj+dXsa+Z8/PYFYm1P2imoGGUyl7hug1lbfe9s3JiQgHVH2JJvYD7QtmQQhU17Zk5pqGm2smcKaWbEj/Ifid39ZTARMVy3sKygzrR3fyMnHIv/H0NEkcaTWSouE/qkTFB/cOKKNQOS7oHiRwhlcFr3kah9S2k2tXPzfyZNlY6ZtRgLVDa21d71aPlRXZ8NaYMZxw7PwwoeKm37k9mDgr9nQoQ9jkzic401C/iCqfOEKW7iCi6xOo3Etk7uS+pxIfsbd2rR3/zq3qD9JUKBp0=,iv:QOgdexAnmpyMITaFsnhGLbetdIwLSPVB1DvbElvqSWc=,tag:HAKXWHmvDwuSSYBlGBQGqg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age13a838yxlcxezvzvkejytnn7mxa58yx6c546zx4jwvualvxvw7gvs97tl4a
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyMzZnRDRyUGVFb3JneEN0
+            TW1hUzU3OXdDMWZNWjhVYnRMVk9lWkdkbXpjCkRrYjZ6ckRXNUpFQzljOWhsQ2Ja
+            bGFJMGZLU2VOTFp3S280RmRNZVp4TGMKLS0tIDlnZCtuMGNIUVJHUDJYQ2ZjOE9B
+            VGV1STg5RHJONDluRTlvMm5rYkhpWDgKzj1oUI/J5FK1JmR+u1Q6fJyjNIc8TXq8
+            jnCLO/52yXAMb3n6qC0eNKJJ8wawX2opl61O1xypRtJ2FpiRCIQ8TQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-12-19T16:24:40Z"
+    mac: ENC[AES256_GCM,data:jInYRKYNYEUkWwcpHNsak+kGbmPpwJRB9IYS4QR+N9iiyW3rhxKeCYLZHRihAN0VHGBsEU042l+pQXi2Vcnt5pwo7nzx564wGTsHA/FFNENQauXg0xztUe5zr8PSEGJ0XW5xuHNXDjQDOvjKkXuKakQoX6TMiA1GXUzsvsjdPzw=,iv:8HZS4gSNQ8/UrS7rFf3zxUGpu2zJY7BTTmRdoa72UXQ=,tag:uHDJb/0wk5wHxkMFCLvyJg==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1
