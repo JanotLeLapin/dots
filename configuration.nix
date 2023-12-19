@@ -61,6 +61,7 @@
 
   services.pipewire = {
     enable = true;
+    wireplumber.enable = true;
   };
 
   # X11
@@ -85,7 +86,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 
   hardware.bluetooth.enable = true;

@@ -37,3 +37,5 @@ done
 
 riverctl spawn mako
 riverctl spawn "swaybg -i $HOME/.wallpaper"
+
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
