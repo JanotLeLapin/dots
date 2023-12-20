@@ -24,7 +24,8 @@
 
     # SSH
     ssag = "ssh-add /run/secrets/ssh/github";
-    ssac = "ssh-add /run/secrets/ssh/github";
+    ssac = "ssh-add /run/secrets/ssh/codeberg";
+    ssaa = "ssh-add /run/secrets/ssh/atf";
 
     # Other
     l = "lsd -a";
