@@ -3,7 +3,6 @@
 let
   extraPackages = [
     ./pkgs/discord
-    ./pkgs/gtk
     ./pkgs/jdtls
   ];
   importPaths = (paths: (map (p: import p inputs) paths));
@@ -18,7 +17,7 @@ in
     };
     packages = with pkgs; [
       nitch lsd pulseaudio-ctl brightnessctl swaybg # CLI tools
-      pcmanfm waybar pavucontrol layan-gtk-theme tela-circle-icon-theme # GUI
+      pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
 
       # Misc
@@ -35,6 +34,7 @@ in
       };
     };
   };
+  gtk = import ./pkgs/gtk inputs;
   programs = {
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
