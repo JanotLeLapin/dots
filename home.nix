@@ -1,10 +1,7 @@
 { config, pkgs, specialArgs, ... } @ inputs:
 
 let
-  extraPackages = [
-    ./pkgs/discord
-    ./pkgs/jdtls
-  ];
+  extraPackages = [./pkgs/jdtls];
   importPaths = (paths: (map (p: import p inputs) paths));
 in
 {
@@ -17,7 +14,7 @@ in
     };
     packages = with pkgs; [
       nitch lsd pulseaudio-ctl brightnessctl swaybg # CLI tools
-      pcmanfm waybar pavucontrol # GUI
+      pcmanfm waybar pavucontrol discord # GUI
       buildkit docker-compose # Docker
 
       # Misc
