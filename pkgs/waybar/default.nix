@@ -11,9 +11,9 @@ in
       position = "top";
       height = 24;
 
-      modules-left = ["tray" "river/window"];
-      modules-center = ["river/tags"];
-      modules-right = ["clock"];
+      modules-left = ["tray" "river/window" "custom/right-dark"];
+      modules-center = ["custom/left-light" "river/tags" "custom/right-light"];
+      modules-right = ["custom/left-dark" "clock"];
 
       "tray" = {
         icon-size = 16;
@@ -31,6 +31,23 @@ in
       };
 
       "clock" = {
+        tooltip = false;
+      };
+
+      "custom/left-dark" = {
+        format = "";
+        tooltip = false;
+      };
+      "custom/left-light" = {
+        format = "";
+        tooltip = false;
+      };
+      "custom/right-dark" = {
+        format = "";
+        tooltip = false;
+      };
+      "custom/right-light" = {
+        format = "";
         tooltip = false;
       };
     };

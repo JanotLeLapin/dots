@@ -4,22 +4,12 @@ window#waybar {
   background: none;
 }
 
-.modules-left, .modules-right { background-color: __bg-0__; }
-.modules-center { background-color: __bg-2__; }
-.modules-left, .modules-center, .modules-right {
-  background-color: __bg-0__;
-  padding: 0 10px;
-}
+#tray { margin-right: 12px; }
 
-#tray {
-  margin-right: 12px;
+#tags {
+  background: __bg-2__;
+  padding: 0 12px;
 }
-
-#window {
-  color: __fg-2__;
-  font-style: italic;
-}
-
 #tags button { color: __fg-0__; }
 #tags button:hover { color: __main-0__; }
 #tags button, #tags button:hover {
@@ -27,11 +17,17 @@ window#waybar {
   box-shadow: none;
   text-shadow: none;
   border: none;
-  padding: 0;
-  margin: 0 4px;
+  border-radius: 0;
+  padding: 0 4px;
+  margin: 0;
   transition: color 150ms ease-in-out;
 }
 
-#clock {
+#clock, #window {
   color: __fg-2__;
+  background: __bg-0__;
+  padding: 0 12px;
 }
+
+#custom-left-dark, #custom-right-dark { color: __bg-0__; font-size: 20px; }
+#custom-left-light, #custom-right-light { color: __bg-2__; font-size: 20px; }
