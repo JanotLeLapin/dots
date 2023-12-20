@@ -4,7 +4,7 @@
     name = "Victor Mono";
     size = 14;
   };
-  theme = "Dark One Nuanced";
+  theme = "Tokyo Night Moon";
   shellIntegration.enableZshIntegration = true;
   settings = {
     symbol_map = "U+E200-U+E2A9 Symbols Nerd Font";
