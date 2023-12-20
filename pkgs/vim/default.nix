@@ -23,7 +23,7 @@
       telescope = import ./plugins/telescope.nix;
       lualine = import ./plugins/lualine.nix;
       barbecue.enable = true;
-      barbar.enable = true;
+      barbar = import ./plugins/barbar.nix;
     };
   };
 }
