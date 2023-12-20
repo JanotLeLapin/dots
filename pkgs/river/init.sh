@@ -37,6 +37,7 @@ done
 
 riverctl spawn mako
 riverctl spawn waybar
+riverctl spawn gammastep
 riverctl spawn "swaybg -i $HOME/.wallpaper"
 
 riverctl map normal None XF86AudioRaiseVolume spawn "pulseaudio-ctl up"

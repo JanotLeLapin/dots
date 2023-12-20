@@ -46,5 +46,6 @@ in
   };
   services = {
     mako = (import ./pkgs/mako inputs);
+    gammastep = import ./pkgs/gammastep;
   };
 }
