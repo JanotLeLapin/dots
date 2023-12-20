@@ -45,4 +45,7 @@ riverctl map normal None XF86AudioLowerVolume spawn "pulseaudio-ctl down"
 riverctl map normal None XF86MonBrightnessUp spawn "brightnessctl set +10%"
 riverctl map normal None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
 
+riverctl map normal None Print spawn "grim -t png - | wl-copy -t image/png"
+riverctl map normal None+Shift Print spawn 'grim -g "$(slurp)" -t png - | wl-copy -t image/png'
+
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river

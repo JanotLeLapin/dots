@@ -13,7 +13,7 @@ in
       EDITOR = "nvim";
     };
     packages = with pkgs; [
-      nitch lsd pulseaudio-ctl brightnessctl swaybg # CLI tools
+      nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
       pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
 
