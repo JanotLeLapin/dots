@@ -14,14 +14,17 @@ in
     };
     packages = with pkgs; [
       nitch lsd pulseaudio-ctl brightnessctl swaybg # CLI tools
-      pcmanfm waybar pavucontrol discord # GUI
+      pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
 
       # Misc
       minecraft
-      (opera.override { proprietaryCodecs = true; }) tor-browser-bundle-bin
+      tor-browser-bundle-bin
+      (opera.override { proprietaryCodecs = true; })
+      (discord.override { withOpenASAR = true; withVencord = true; })
     ] ++ (importPaths extraPackages);
     file = {
+      discord = import ./pkgs/discord inputs;
       river = import ./pkgs/river inputs;
       zellijLayout = import ./pkgs/zellij/layout.nix;
 
