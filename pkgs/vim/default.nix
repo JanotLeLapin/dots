@@ -14,7 +14,7 @@
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
       cmp_luasnip.enable = true;
-      luasnip.enable = true;
+      luasnip = import ./plugins/luasnip;
       nvim-autopairs.enable = true;
       treesitter.enable = true;
 
