@@ -8,7 +8,7 @@
     globals = { mapleader = " "; };
     plugins = {
       lsp = import ./plugins/lsp.nix;
-      nvim-cmp = import ./plugins/cmp.nix;
+      nvim-cmp = import ./plugins/cmp;
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
