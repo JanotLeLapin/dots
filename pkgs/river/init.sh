@@ -2,7 +2,7 @@
 
 riverctl keyboard-layout fr
 
-riverctl spawn rivertile
+riverctl spawn "rivertile -outer-padding 4 -view-padding 2"
 riverctl output-layout rivertile
 
 riverctl map normal Super F toggle-fullscreen
@@ -16,6 +16,9 @@ riverctl map normal Super K focus-view previous
 
 riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
+
+riverctl map normal Super+Control J send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Super+Control K send-layout-cmd rivertile "main-ratio -0.05"
 
 riverctl map normal Super Space toggle-float
 
