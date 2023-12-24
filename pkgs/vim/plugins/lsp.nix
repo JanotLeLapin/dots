@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   enable = true;
   keymaps = {
@@ -15,6 +17,12 @@
     clangd.enable = true;
     pylsp.enable = true;
     elixirls.enable = true;
+    rust-analyzer = {
+      enable = true;
+      installCargo = true;
+      installRustc = true;
+      package = pkgs.rust-analyzer;
+    };
 
     # Web frameworks
     astro.enable = true;

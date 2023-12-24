@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, ... } @ inputs:
+
 {
   programs.nixvim = {
     enable = true;
@@ -7,7 +8,7 @@
     options = import ./options.nix;
     globals = { mapleader = " "; };
     plugins = {
-      lsp = import ./plugins/lsp.nix;
+      lsp = import ./plugins/lsp.nix inputs;
       nvim-cmp = import ./plugins/cmp;
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
