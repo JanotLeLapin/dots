@@ -1,7 +1,7 @@
 { config, pkgs, specialArgs, ... } @ inputs:
 
 let
-  extraPackages = [./pkgs/jdtls];
+  extraPackages = [./pkgs/jdtls ./pkgs/thorium];
   importPaths = (paths: (map (p: import p inputs) paths));
 in
 {
@@ -20,7 +20,6 @@ in
       # Misc
       minecraft
       tor-browser-bundle-bin
-      (opera.override { proprietaryCodecs = true; })
       (discord.override { withOpenASAR = true; withVencord = true; })
     ] ++ (importPaths extraPackages);
     file = {
