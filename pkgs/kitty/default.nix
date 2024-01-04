@@ -7,7 +7,6 @@
   theme = "Tokyo Night Moon";
   shellIntegration.enableZshIntegration = true;
   settings = {
-    symbol_map = "U+E200-U+E2A9 Symbols Nerd Font";
     disable_ligatures = "never";
     window_padding_width = 0;
     enable_audio_bell = "no";

@@ -90,19 +90,16 @@
   hardware.bluetooth.enable = true;
 
   # Fonts
-  fonts = {
+  fonts = let nerd = ((import ./fonts.nix) pkgs) pkgs.victor-mono; in {
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      roboto
-      victor-mono
-      font-awesome
-      (nerdfonts.override { fonts = ["JetBrainsMono"]; })
+      nerd
     ];
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "Roboto" ];
+        sansSerif = [ "Victor Mono" ];
         monospace = [ "Victor Mono" ];
       };
     };
