@@ -11,9 +11,9 @@ in
       position = "top";
       height = 24;
 
-      modules-left = ["tray" "river/window" "custom/right-dark"];
+      modules-left = ["tray" "river/window" "custom/right-dark" "custom/right-light"];
       modules-center = ["custom/left-light" "river/tags" "custom/right-light"];
-      modules-right = ["custom/left-dark" "clock"];
+      modules-right = ["custom/left-light" "network" "battery" "custom/left-dark" "clock"];
 
       "tray" = {
         icon-size = 16;
@@ -30,8 +30,20 @@ in
         set-tags = map tags [0 1 2 3 4];
       };
 
+      "network" = {
+        format-wifi = "{essid}  ";
+        format-ethernet = "Ethernet  ";
+      };
+
+      "battery" = {
+        format = "{capacity}% {icon}";
+        # format-icons = ["󰁺 " "󰁻 " "󰁼 " "󰁽 " "󰁾 " "󰁿 " "󰂀 " "󰂁 " "󰂂 " "󰁹 "];
+        format-icons = [" " " " " " " " " "];
+      };
+
       "clock" = {
         tooltip = false;
+        format = "{:%H:%M}  ";
       };
 
       "custom/left-dark" = {
