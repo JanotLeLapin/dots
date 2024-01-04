@@ -37,6 +37,7 @@ in
   programs = {
     git = import ./pkgs/git;
     kitty = import ./pkgs/kitty;
+    starship = import ./pkgs/starship;
     vscode = (import ./pkgs/vscode inputs);
     waybar = (import ./pkgs/waybar inputs);
     wofi = (import ./pkgs/wofi inputs);
