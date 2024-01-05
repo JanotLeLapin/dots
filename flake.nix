@@ -16,6 +16,7 @@
   };
 
   outputs = { nixpkgs, home-manager, nixvim, sops-nix, ... } @ inputs: {
+    templates = import ./templates;
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
