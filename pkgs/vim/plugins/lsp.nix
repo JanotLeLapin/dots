@@ -23,6 +23,7 @@
       installRustc = true;
       package = pkgs.rust-analyzer;
     };
+    nil_ls.enable = true;
 
     # Web frameworks
     astro.enable = true;
