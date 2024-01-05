@@ -19,13 +19,13 @@ window#waybar {
   transition: color 150ms ease-in-out;
 }
 
-#tray, #window, #clock {
+#tray, #clock {
   color: __fg-2__;
   background: __bg-0__;
   padding: 0 12px;
 }
 
-#tags, #battery, #network {
+#window, #tags, #battery, #network {
   background: __bg-2__;
   padding: 0 12px;
 }
