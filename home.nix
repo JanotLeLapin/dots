@@ -1,7 +1,7 @@
 { config, pkgs, specialArgs, ... } @ inputs:
 
 let
-  extraPackages = [./pkgs/jdtls ./pkgs/thorium];
+  extraPackages = [./pkgs/jdtls ./pkgs/thorium ./pkgs/gdlauncher];
   importPaths = (paths: (map (p: import p inputs) paths));
 in
 {
@@ -18,7 +18,6 @@ in
       buildkit docker-compose # Docker
 
       # Misc
-      minecraft
       tor-browser-bundle-bin
       (discord.override { withOpenASAR = true; withVencord = true; })
     ] ++ (importPaths extraPackages);
