@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... } @ inputs:
+{ lib, pkgs, ... }:
 
 {
   imports =
@@ -44,12 +44,6 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Hyprland
-  programs.hyprland = {
-    enable = false;
-    xwayland.enable = true;
-  };
-
   # River
   programs.river.enable = true;
 
@@ -71,11 +65,10 @@
 
     displayManager = {
       defaultSession = "river";
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
+      sddm.enable = true;
     };
+
+    desktopManager.plasma5.enable = true;
 
     layout = "fr";
     xkbVariant = "";
