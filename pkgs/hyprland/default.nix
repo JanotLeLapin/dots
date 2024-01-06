@@ -3,7 +3,6 @@
   # enableNvidiaPatches = true;
   extraConfig = builtins.readFile ./hyprland.conf;
   settings = {
-    exec-once = "waybar & hyprpaper & mako & \"swaybg -i $HOME/.wallpaper\"";
     env = "XCURSOR_SIZE,24";
 
     input = {
