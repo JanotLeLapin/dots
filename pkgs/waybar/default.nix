@@ -1,8 +1,5 @@
 { specialArgs, ... }:
 
-let
-  tags = n: if n == 0 then 1 else 2 * tags (n - 1);
-in
 {
   enable = true;
   settings = {
@@ -11,8 +8,8 @@ in
       position = "top";
       height = 24;
 
-      modules-left = ["tray" "custom/right-dark" "river/window" "custom/right-light"];
-      modules-center = ["custom/left-light" "river/tags" "custom/right-light"];
+      modules-left = ["tray" "custom/right-dark" "hyprland/window" "custom/right-light"];
+      modules-center = ["custom/left-light" "hyprland/workspaces" "custom/right-light"];
       modules-right = ["custom/left-light" "network" "battery" "custom/left-dark" "clock"];
 
       "tray" = {
@@ -20,15 +17,11 @@ in
         spacing = 4;
       };
 
-      "river/window" = {
+      "hyprland/window" = {
         format = "{}";
-        max-length = 40;
       };
 
-      "river/tags" = {
-        num-tags = 5;
-        set-tags = map tags [0 1 2 3 4];
-      };
+      "hyprland/workspaces" = {};
 
       "network" = {
         format-wifi = "{essid}  ";
