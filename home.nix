@@ -1,4 +1,4 @@
-{ config, pkgs, specialArgs, ... } @ inputs:
+{ pkgs, ... } @ inputs:
 
 let
   extraPackages = [./pkgs/jdtls ./pkgs/thorium ./pkgs/gdlauncher];
@@ -19,7 +19,7 @@ in
 
       # Misc
       tor-browser-bundle-bin
-      (discord.override { withOpenASAR = true; withVencord = true; })
+      armcord
     ] ++ (importPaths extraPackages);
     file = {
       discord = import ./pkgs/discord inputs;
