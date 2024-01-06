@@ -18,8 +18,8 @@
 
     # Nix
     nd = "nix develop -c $SHELL";
+    nf = "nix flake";
     ns = "nix shell";
-    nsp = "nix shell";
     nr = "sudo nixos-rebuild switch --impure --flake";
 
     # SSH
