@@ -47,4 +47,5 @@ in
     mako = (import ./pkgs/mako inputs);
     gammastep = import ./pkgs/gammastep;
   };
+  wayland.windowManager.hyprland = import ./pkgs/hyprland;
 }

@@ -48,8 +48,11 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # River
-  programs.river.enable = true;
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   services.pipewire = {
     enable = true;
@@ -68,11 +71,9 @@
     };
 
     displayManager = {
-      defaultSession = "river";
-      sddm.enable = true;
+      defaultSession = "hyprland";
+      gdm.enable = true;
     };
-
-    desktopManager.plasma5.enable = true;
 
     layout = "fr";
     xkbVariant = "";
