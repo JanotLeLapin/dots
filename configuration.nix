@@ -11,6 +11,10 @@
     "flakes"
   ];
 
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS="1";
+  };
+
   # Bootloader
   boot.loader.systemd-boot = {
     enable = true;
