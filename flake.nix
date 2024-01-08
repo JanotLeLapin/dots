@@ -27,7 +27,7 @@
           home-manager.extraSpecialArgs = (import ./theme.nix inputs);
           home-manager.users.josephd = import ./home.nix;
         }
-        nixvim.nixosModules.nixvim (import ./pkgs/vim)
+        nixvim.nixosModules.nixvim (import ./vim)
         sops-nix.nixosModules.sops (import ./keys)
       ];
     };

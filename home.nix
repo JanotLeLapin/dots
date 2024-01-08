@@ -23,9 +23,9 @@ in
       armcord
     ] ++ (importPaths extraPackages);
     file = {
-      discord = import ./pkgs/discord inputs;
-      river = import ./pkgs/river inputs;
-      zellijLayout = import ./pkgs/zellij/layout.nix;
+      discord = import ./config/discord inputs;
+      river = import ./config/river inputs;
+      zellij = import ./config/zellij;
 
       wallpaper = {
         source = ./wallpaper.png;
@@ -35,18 +35,18 @@ in
   };
   gtk = import ./pkgs/gtk inputs;
   programs = {
-    git = import ./pkgs/git;
-    kitty = import ./pkgs/kitty;
-    starship = import ./pkgs/starship;
-    vscode = (import ./pkgs/vscode inputs);
-    waybar = (import ./pkgs/waybar inputs);
-    wofi = (import ./pkgs/wofi inputs);
-    zellij = import ./pkgs/zellij;
-    zsh = (import ./pkgs/zsh inputs);
+    git = import ./programs/git;
+    kitty = import ./programs/kitty;
+    starship = import ./programs/starship;
+    vscode = import ./programs/vscode inputs;
+    waybar = import ./programs/waybar inputs;
+    wofi = import ./programs/wofi inputs;
+    zellij = import ./programs/zellij;
+    zsh = import ./programs/zsh inputs;
   };
   services = {
-    mako = (import ./pkgs/mako inputs);
-    gammastep = import ./pkgs/gammastep;
+    mako = import ./services/mako inputs;
+    gammastep = import ./services/gammastep;
   };
-  wayland.windowManager.hyprland = import ./pkgs/hyprland;
+  wayland.windowManager.hyprland = import ./hyprland;
 }
