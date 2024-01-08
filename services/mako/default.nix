@@ -1,6 +1,4 @@
-{ specialArgs, ... }:
-
-{
+{ specialArgs, ... }: {
   enable = true;
   font = "Victor Mono 12";
   textColor = "#" + specialArgs.colors.fg-2;

@@ -1,14 +1,11 @@
-{ pkgs, ... }:
-
-let
+{ pkgs, ... }: let
   theme = pkgs.fetchFromGitHub {
     owner = "Dyzean";
     repo = "Tokyo-Night";
     rev = "a3afefef90d6784645cd129bbd16a24593e4ad53";
     hash = "sha256-lsKkx3DP/W0FW+NbUYysTst69UG4hfryg181TmURMW0=";
   };
-in
-{
+in {
   target = ".config/discord/settings.json";
   text = builtins.toJSON {
     SKIP_HOST_UPDATE = true;

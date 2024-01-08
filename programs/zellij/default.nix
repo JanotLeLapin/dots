@@ -1,4 +1,4 @@
-{
+_: {
   enable = true;
   enableZshIntegration = true;
   settings = {

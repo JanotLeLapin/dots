@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   enable = true;
   theme = {
     package = pkgs.tokyo-night-gtk;

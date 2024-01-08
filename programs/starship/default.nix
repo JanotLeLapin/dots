@@ -1,4 +1,4 @@
-let
+_: let
   prompt = success: "[](bold ${if success then "green" else "red"})";
 in {
   enable = true;

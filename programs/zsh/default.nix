@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{ config, ... }: {
   enable = true;
   shellAliases = {
     # Git

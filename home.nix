@@ -1,10 +1,7 @@
-{ pkgs, ... } @ inputs:
-
-let
-  extraPackages = [./pkgs/jdtls ./pkgs/thorium ./pkgs/gdlauncher];
-  importPaths = (paths: (map (p: import p inputs) paths));
-in
-{
+{ pkgs, ... } @ inputs: let
+  listImport = path: modules: (map (module: import (./. + "/${path}/${module}") inputs) modules);
+  attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}") inputs);
+in {
   home = {
     username = "josephd";
     homeDirectory = "/home/josephd";
@@ -21,32 +18,13 @@ in
       spotify
       tor-browser-bundle-bin
       armcord
-    ] ++ (importPaths extraPackages);
-    file = {
-      discord = import ./config/discord inputs;
-      river = import ./config/river inputs;
-      zellij = import ./config/zellij;
+    ] ++ listImport "pkgs" [ "jdtls" "thorium" "gdlauncher" ];
+    file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
+  };
 
-      wallpaper = {
-        source = ./wallpaper.png;
-        target = ".wallpaper";
-      };
-    };
-  };
-  gtk = import ./pkgs/gtk inputs;
-  programs = {
-    git = import ./programs/git;
-    kitty = import ./programs/kitty;
-    starship = import ./programs/starship;
-    vscode = import ./programs/vscode inputs;
-    waybar = import ./programs/waybar inputs;
-    wofi = import ./programs/wofi inputs;
-    zellij = import ./programs/zellij;
-    zsh = import ./programs/zsh inputs;
-  };
-  services = {
-    mako = import ./services/mako inputs;
-    gammastep = import ./services/gammastep;
-  };
+  gtk = import ./gtk inputs;
   wayland.windowManager.hyprland = import ./hyprland;
+
+  programs = attrImport "programs" [ "git" "kitty" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
+  services = attrImport "services" [ "mako" "gammastep" ];
 }

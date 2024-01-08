@@ -1,6 +1,4 @@
-{ specialArgs, ... }:
-
-{
+{ specialArgs, ... }: {
   enable = true;
   settings = {
     main = {
