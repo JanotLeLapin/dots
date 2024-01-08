@@ -18,6 +18,7 @@ in
       buildkit docker-compose # Docker
 
       # Misc
+      spotify
       tor-browser-bundle-bin
       armcord
     ] ++ (importPaths extraPackages);
