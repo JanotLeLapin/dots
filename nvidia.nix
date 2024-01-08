@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{ config, ... }: {
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -8,6 +6,12 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+
+  nixpkgs.config.allowUnfree = true;
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS="1";
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;

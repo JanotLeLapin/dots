@@ -1,19 +1,15 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-    ] ++ lib.optional (builtins.pathExists ./misc.nix) ./misc.nix;
+    ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS="1";
-  };
 
   # Bootloader
   boot.loader.systemd-boot = {
@@ -121,9 +117,6 @@
   environment.systemPackages = with pkgs; [
     bash gcc wget unzip glib ripgrep sops
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

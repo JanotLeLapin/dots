@@ -1,3 +1,0 @@
-{
-  imports = [ ./nvidia.nix ];
-}
