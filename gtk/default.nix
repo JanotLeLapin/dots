@@ -1,5 +1,8 @@
 { pkgs, ... }: {
   enable = true;
+  font = {
+    name = "Victor Mono";
+  };
   theme = {
     package = pkgs.tokyo-night-gtk;
     name = "Tokyonight-Dark-BL";
