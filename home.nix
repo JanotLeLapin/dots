@@ -27,4 +27,13 @@ in {
 
   programs = attrImport "programs" [ "git" "kitty" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" ];
+
+  xdg.desktopEntries = {
+    i2p-browser = {
+      name = "I2P Browser";
+      genericName = "Web Browser";
+      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -p i2p";
+      categories = [ "Application" "Network" "WebBrowser" ];
+    };
+  };
 }
