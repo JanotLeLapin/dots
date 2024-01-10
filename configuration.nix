@@ -57,6 +57,7 @@
 
   # OpenSSH
   programs.ssh.startAgent = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # X11
   services.xserver = {
