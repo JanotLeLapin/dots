@@ -19,7 +19,7 @@ in {
       tor-browser-bundle-bin
       armcord
     ] ++ listImport "pkgs" [ "jdtls" "thorium" "gdlauncher" ];
-    file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
+    file = attrImport "config" [ "river" "zellij" "wallpaper" ];
   };
 
   gtk = import ./gtk inputs;
