@@ -26,5 +26,11 @@
       barbecue.enable = true;
       barbar = import ./plugins/barbar.nix;
     };
+    extraConfigLua = ''
+      require'lspconfig'.hls.setup {
+        filetypes = { 'haskell', 'lhaskell', 'cabal' },
+        cmd = { "${pkgs.haskell-language-server}/bin/haskell-language-server-9.4.8", "--lsp" }
+      }
+    '';
   };
 }
