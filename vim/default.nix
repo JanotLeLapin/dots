@@ -20,6 +20,7 @@
       treesitter.enable = true;
 
       rust-tools.enable = true;
+      nvim-jdtls = import ./plugins/jdtls;
 
       telescope = import ./plugins/telescope.nix;
       lualine = import ./plugins/lualine.nix;
