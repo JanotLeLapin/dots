@@ -26,6 +26,7 @@ window#waybar {
 }
 
 #window, #workspaces, #battery, #network {
+  color: __fg-1__;
   background: __bg-2__;
   padding: 0 12px;
 }
