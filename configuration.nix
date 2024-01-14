@@ -6,6 +6,8 @@
       ./hardware-configuration.nix
     ];
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -116,6 +118,8 @@
 
   # Configure console keymap
   console.keyMap = "fr";
+
+  nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
 
