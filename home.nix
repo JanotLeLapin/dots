@@ -16,7 +16,7 @@ in {
 
       # Misc
       tor-browser-bundle-bin
-    ] ++ listImport "pkgs" [ "jdtls" "thorium" "gdlauncher" ];
+    ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "river" "zellij" "wallpaper" ];
   };
 
@@ -44,7 +44,7 @@ in {
     discord = {
       name = "Discord";
       genericName = "Chatting";
-      exec = "${pkgs.armcord}/bin/armcord ${chromium-flags}";
+      exec = "${pkgs.discord}/bin/discord ${chromium-flags}";
       categories = [ "Application" "Network" ];
     };
     spotify = {
