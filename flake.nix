@@ -21,6 +21,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        ./tlp.nix
         ./gpu/intel.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
