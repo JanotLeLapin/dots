@@ -35,10 +35,10 @@ in {
       exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -p i2p";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
-    chromium = {
-      name = "Chromium";
+    firefox = {
+      name = "Firefox";
       genericName = "Web Browser";
-      exec = "${pkgs.chromium}/bin/chromium ${chromium-flags}";
+      exec = "${pkgs.floorp}/bin/floorp";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     discord = {
