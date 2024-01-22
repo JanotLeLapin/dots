@@ -32,6 +32,12 @@
         filetypes = { 'haskell', 'lhaskell', 'cabal' },
         cmd = { "${pkgs.haskell-language-server}/bin/haskell-language-server-9.4.8", "--lsp" }
       }
+
+      vim.filetype.add({
+        extension = {
+          mdoc = "markdown",
+        },
+      })
     '';
   };
 }
