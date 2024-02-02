@@ -7,4 +7,8 @@
     path = ./c;
     description = "C template using GCC.";
   };
+  python = {
+    path = ./python;
+    description = "Python 3.X template.";
+  };
 }
