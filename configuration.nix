@@ -88,8 +88,10 @@
       gdm.enable = true;
     };
 
-    layout = "fr";
-    xkbVariant = "";
+    xkb = {
+      layout = "fr";
+      variant = "";
+    };
   };
 
   xdg.portal = {
