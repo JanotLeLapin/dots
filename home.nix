@@ -6,9 +6,6 @@ in {
     username = "josephd";
     homeDirectory = "/home/josephd";
     stateVersion = "23.05";
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
     packages = with pkgs; [
       nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
       pcmanfm waybar pavucontrol # GUI
@@ -23,7 +20,7 @@ in {
   gtk = import ./gtk inputs;
   wayland.windowManager.hyprland = import ./hyprland;
 
-  programs = attrImport "programs" [ "git" "kitty" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
+  programs = attrImport "programs" [ "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" ];
 
   xdg.desktopEntries = let
