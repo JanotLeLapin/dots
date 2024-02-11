@@ -1,7 +1,7 @@
 { pkgs, ... }: let
   tsPlugins = with pkgs.vimPlugins.nvim-treesitter-parsers; [
     css scss html yuck
-    nix typescript rust
+    nix lua typescript rust
   ];
 
   plugins = with pkgs.vimPlugins; [
