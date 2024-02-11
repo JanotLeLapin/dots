@@ -9,6 +9,9 @@
     (metric :label " "
             :value volume
             :onchange "pulseaudio-ctl set {}%")
+    (metric :label " "
+            :value battery
+            :onchange "")
     time))
 
 (defwidget workspaces []
@@ -40,6 +43,9 @@
 
 (defpoll volume :interval "1s"
   "echo $(pulseaudio-ctl full-status) | awk '{print $1}'")
+
+(defpoll battery :interval "60s"
+  "cat /sys/class/power_supply/BAT0/capacity")
 
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
