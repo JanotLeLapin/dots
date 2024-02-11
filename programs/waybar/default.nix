@@ -1,5 +1,5 @@
 { specialArgs, ... }: {
-  enable = true;
+  enable = false;
   settings = {
     main = {
       layer = "top";

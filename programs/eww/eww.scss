@@ -1,0 +1,42 @@
+$bg-1: #111827;
+$bg-2: #374151;
+
+* {
+  all: unset;
+  font-style: italic;
+}
+
+.workspaces {
+  padding: 4px 20px;
+  background: $bg-1;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+
+  button {
+    margin: 0 2px;
+  }
+}
+
+.sidestuff {
+  padding: 4px 20px;
+  background: $bg-1;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+scale trough {
+  background-color: $bg-2;
+  border-radius: 50px;
+  min-height: 5px;
+  min-width: 75px;
+  margin-left: 10px;
+  margin-right: 20px;
+
+  highlight {
+    border-radius: 50px;
+    background-color: #6366f1;
+  }
+}
+.label-ram {
+  font-size: large;
+}

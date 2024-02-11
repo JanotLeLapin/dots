@@ -20,7 +20,7 @@ in {
   gtk = import ./gtk inputs;
   wayland.windowManager.hyprland = import ./hyprland;
 
-  programs = attrImport "programs" [ "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
+  programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" ];
 
   xdg.desktopEntries = let
