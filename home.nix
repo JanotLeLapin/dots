@@ -29,7 +29,7 @@ in {
     i2p-browser = {
       name = "I2P Browser";
       genericName = "Web Browser";
-      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -p i2p";
+      exec = "${pkgs.chromium}/bin/chromium --proxy-server=\"http://192.168.1.91:4444\"";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     firefox = {
