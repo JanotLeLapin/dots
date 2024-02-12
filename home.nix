@@ -23,6 +23,8 @@ in {
   programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "spotifyd" ];
 
+  sops = import ./keys;
+
   xdg.desktopEntries = let
     chromium-flags = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   in {

@@ -21,9 +21,9 @@
     nr = "sudo nixos-rebuild switch --impure --flake";
 
     # SSH
-    ssag = "ssh-add /run/secrets/ssh/github";
-    ssac = "ssh-add /run/secrets/ssh/codeberg";
-    ssaa = "ssh-add /run/secrets/ssh/atf";
+    ssag = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/github";
+    ssac = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/codeberg";
+    ssaa = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/atf";
 
     # Other
     l = "lsd -a";

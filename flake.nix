@@ -20,12 +20,14 @@
         ./tlp.nix
         ./gpu/intel.nix
         home-manager.nixosModules.home-manager {
+          home-manager.sharedModules = [
+            sops-nix.homeManagerModules.sops
+          ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = (import ./theme.nix inputs);
           home-manager.users.josephd = import ./home.nix;
         }
-        sops-nix.nixosModules.sops (import ./keys)
       ];
     };
   };
