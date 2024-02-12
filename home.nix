@@ -29,7 +29,7 @@ in {
     i2p-browser = {
       name = "I2P Browser";
       genericName = "Web Browser";
-      exec = "${pkgs.chromium}/bin/chromium --proxy-server=\"http://192.168.1.91:4444\"";
+      exec = "${pkgs.chromium}/bin/chromium --incognito --proxy-server=\"http://192.168.1.91:4444\"";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     firefox = {
