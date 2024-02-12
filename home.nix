@@ -23,6 +23,8 @@ in {
   programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "spotifyd" ];
 
+  systemd.user.services.spotifyd.Unit.After = [ "sops-nix.service" ];
+
   sops = import ./keys;
 
   xdg.desktopEntries = let
