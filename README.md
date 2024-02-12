@@ -1,6 +1,8 @@
 # Janot's dotfiles
 
-My configuration files for NixOS, River, Neovim, and more.
+My configuration files for NixOS, Hyprland, Neovim, and more.
+
+![Preview](./preview.png)
 
 ## Setup
 
