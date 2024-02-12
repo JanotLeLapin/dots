@@ -14,10 +14,10 @@
   ];
 
   # Bootloader
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 2;
-  };
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.useOSProber = true;
 
   # Enable networking
   networking.hostName = "nixos"; # Define your hostname.
