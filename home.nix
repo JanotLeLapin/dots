@@ -7,7 +7,7 @@ in {
     homeDirectory = "/home/josephd";
     stateVersion = "23.05";
     packages = with pkgs; [
-      nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
+      spotify-tui nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
       pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
 
@@ -21,7 +21,7 @@ in {
   wayland.windowManager.hyprland = import ./hyprland;
 
   programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
-  services = attrImport "services" [ "mako" "gammastep" ];
+  services = attrImport "services" [ "mako" "gammastep" "spotifyd" ];
 
   xdg.desktopEntries = let
     chromium-flags = "--enable-features=UseOzonePlatform --ozone-platform=wayland";

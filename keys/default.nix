@@ -1,7 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
-  default = { owner = "josephd"; };
+  default = {
+    owner = config.users.users.josephd.name;
+    group = config.users.users.josephd.group;
+  };
 in
 {
   sops = {
@@ -12,6 +15,7 @@ in
       "ssh/github" = default;
       "ssh/codeberg" = default;
       "ssh/atf" = default;
+      "password/spotify" = default;
     };
   };
 }
