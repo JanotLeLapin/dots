@@ -48,7 +48,7 @@ in {
     discord = {
       name = "Discord";
       genericName = "Chatting";
-      exec = "${pkgs.discord}/bin/discord ${chromium-flags}";
+      exec = "${(pkgs.discord.override { withOpenASAR = true; })}/bin/discord ${chromium-flags}";
       categories = [ "Application" "Network" ];
     };
     spotify = {
