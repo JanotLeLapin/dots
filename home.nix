@@ -10,9 +10,6 @@ in {
       spotify-tui nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
       pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
-
-      # Misc
-      tor-browser-bundle-bin
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "river" "zellij" "wallpaper" ];
   };
@@ -33,7 +30,13 @@ in {
     i2p-browser = {
       name = "I2P Browser";
       genericName = "Web Browser";
-      exec = "${pkgs.chromium}/bin/chromium --incognito --proxy-server=\"http://192.168.1.91:4444\"";
+      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p";
+      categories = [ "Application" "Network" "WebBrowser" ];
+    };
+    tor-browser = {
+      name = "Tor Browser";
+      genericName = "Web Browser";
+      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P tor";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     firefox = {
