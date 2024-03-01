@@ -11,7 +11,7 @@ in {
       pcmanfm waybar pavucontrol # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
-    file = attrImport "config" [ "river" "zellij" "wallpaper" ];
+    file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
   };
 
   gtk = import ./gtk inputs;
