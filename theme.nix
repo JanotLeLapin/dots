@@ -2,9 +2,9 @@
 
 rec {
   colors = {
-    main-0 = "818cf8";
-    main-1 = "6366f1";
-    main-2 = "4f46e5";
+    main-0 = "14b8a6";
+    main-1 = "06b6d4";
+    main-2 = "3b82f6";
 
     bg-0 = "020617";
     bg-1 = "0f172a";

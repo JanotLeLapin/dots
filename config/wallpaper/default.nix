@@ -1,4 +1,4 @@
-_: {
-  source = ./wallpaper.png;
+{ pkgs, ... }: {
+  source = ./wallpaper.jpg;
   target = ".wallpaper";
 }

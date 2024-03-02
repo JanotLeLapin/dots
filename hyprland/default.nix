@@ -1,4 +1,4 @@
-{
+{ specialArgs, ... }: {
   enable = true;
   # enableNvidiaPatches = true;
   extraConfig = builtins.readFile ./hyprland.conf;
@@ -22,7 +22,7 @@
       gaps_in = 4;
       gaps_out = 10;
       border_size = 4;
-      "col.active_border" = "rgba(ec4899aa) rgba(a855f7aa) rgba(6366f1aa) 135deg";
+      "col.active_border" = "rgba(${specialArgs.colors.main-0}aa) rgba(${specialArgs.colors.main-1}aa) rgba(${specialArgs.colors.main-2}aa) 135deg";
       "col.inactive_border" = "rgba(595959aa)";
 
       layout = "dwindle";
@@ -35,6 +35,17 @@
       inactive_opacity = 1;
       active_opacity = 1;
       fullscreen_opacity = 1;
+
+      blur = {
+        size = 7;
+        passes = 3;
+        xray = true;
+        brightness = 0.8;
+        contrast = 1.0;
+        vibrancy = 0.6;
+        vibrancy_darkness = 0.6;
+        popups = true;
+      };
 
       drop_shadow = false;
       shadow_range = 4;
