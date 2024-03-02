@@ -44,7 +44,7 @@
            :onchange onchange)))
 
 (defpoll track :interval "10s"
-  "spt pb -f '󰝚 %a - %t'")
+  "mpc current")
 
 (defpoll volume :interval "1s"
   "echo $(pulseaudio-ctl full-status) | awk '{print $1}'")

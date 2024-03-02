@@ -7,8 +7,8 @@ in {
     homeDirectory = "/home/josephd";
     stateVersion = "23.05";
     packages = with pkgs; [
-      spotify-tui nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
-      pcmanfm waybar pavucontrol rhythmbox nicotine-plus # GUI
+      nitch lsd mpc-cli pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
+      pcmanfm pavucontrol blueberry rhythmbox nicotine-plus deluge ario # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
@@ -18,12 +18,13 @@ in {
   wayland.windowManager.hyprland = import ./hyprland;
 
   programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
-  services = attrImport "services" [ "mako" "gammastep" "spotifyd" ];
+  services = attrImport "services" [ "mako" "mpd" "gammastep" ];
 
   systemd.user.services.spotifyd.Unit.After = [ "sops-nix.service" ];
 
   sops = import ./keys;
 
+  xdg.userDirs.enable = true;
   xdg.desktopEntries = let
     chromium-flags = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   in {

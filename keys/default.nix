@@ -6,6 +6,5 @@
     "ssh/github" = { path = "%r/ssh/github"; };
     "ssh/codeberg" = { path = "%r/ssh/codeberg"; };
     "ssh/atf" = { path = "%r/ssh/atf"; };
-    "password/spotify" = { path = "%r/password/spotify"; };
   };
 }
