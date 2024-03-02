@@ -33,11 +33,6 @@
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # Enable sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -62,9 +57,25 @@
     xwayland.enable = true;
   };
 
+  # Enable sound
+  sound.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
     wireplumber.enable = true;
+    configPackages = [
+    	(pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
+		bluez_monitor.properties = {
+          ["bluez5.enable-sbc-xq"] = true,
+          ["bluez5.enable-msbc"] = true,
+          ["bluez5.enable-hw-volume"] = true,
+          ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+		    }
+	    '')
+    ];
   };
 
   # OpenSSH
@@ -97,6 +108,7 @@
   };
 
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Fonts
   fonts = let nerd = ((import ./fonts.nix) pkgs) pkgs.victor-mono; in {
@@ -126,7 +138,7 @@
   users.users.josephd = {
     isNormalUser = true;
     description = "Joseph DALY";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
     shell = pkgs.zsh;
   };
 
