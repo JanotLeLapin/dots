@@ -8,7 +8,7 @@ in {
     stateVersion = "23.05";
     packages = with pkgs; [
       spotify-tui nitch lsd pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
-      pcmanfm waybar pavucontrol # GUI
+      pcmanfm waybar pavucontrol rhythmbox nicotine-plus # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
