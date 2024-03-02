@@ -8,9 +8,6 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label " "
-            :value volume
-            :onchange "pulseaudio-ctl set {}%")
     (metric :label " "
             :value battery
             :onchange "")
@@ -43,11 +40,7 @@
            :value value
            :onchange onchange)))
 
-(defpoll track :interval "10s"
-  "mpc current")
-
-(defpoll volume :interval "1s"
-  "echo $(pulseaudio-ctl full-status) | awk '{print $1}'")
+(deflisten track "bash -c \"while true; do mpc current --wait; done\"")
 
 (defpoll battery :interval "60s"
   "cat /sys/class/power_supply/BAT0/capacity")
