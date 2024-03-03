@@ -144,7 +144,9 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    bash gcc wget unzip glib ripgrep sops
+    zip unzip # archives
+    feh mpv # multimedia
+    bash gcc wget glib ripgrep sops # other
   ];
 
   services.deluge.enable = true;
