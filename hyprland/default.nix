@@ -1,9 +1,21 @@
-{ specialArgs, ... }: {
+{ pkgs, specialArgs, ... }: {
   enable = true;
   # enableNvidiaPatches = true;
-  extraConfig = builtins.readFile ./hyprland.conf;
   settings = {
     env = "XCURSOR_SIZE,24";
+    "$mod" = "SUPER";
+
+    exec-once = [
+      "eww open bar"
+      "mako"
+      "${pkgs.swaybg}/bin/swaybg -i $HOME/.wallpaper"
+    ];
+
+    monitor = [
+      "DP-1,3440x1440,0x0,1"
+      "HDMI-A-1,1920x1080,3440x360,1"
+      "eDP-1,1920x1200,0x0,1"
+    ];
 
     input = {
       kb_layout = "fr,us";
@@ -53,6 +65,11 @@
       "col.shadow" = "rgba(1a1a1aee)";
     };
 
+    windowrulev2 = [
+      "opacity 0.8,class:(kitty)"
+      "opacity 0.8,class:(discord)"
+    ];
+
     dwindle = {
       pseudotile = true;
       preserve_split = true;
@@ -60,5 +77,57 @@
 
     master = { new_is_master = true; };
     gestures = { workspace_swipe = false; };
+
+    bind = let 
+      workspaces = {
+        ampersand  = "1";
+        eacute     = "2";
+        quotedbl   = "3";
+        apostrophe = "4";
+        parenleft  = "5";
+        minus      = "6";
+        egrave     = "7";
+        underscore = "8";
+        ccedilla   = "9";
+        agrave     = "10";
+      };
+
+      genWorkspaceBindings = key: "$mod,       ${key}, workspace,       ${workspaces."${key}"}";
+    in [
+      "$mod, Space, togglefloating"
+      "$mod, Q,     killactive"
+      "$mod, M,     exit"
+      "$mod, F,     fullscreen"
+      "$mod, J,     togglesplit"
+
+      # Focus
+      "$mod, left,  movefocus, l"
+      "$mod, right, movefocus, r"
+      "$mod, up,    movefocus, u"
+      "$mod, down,  movefocus, d"
+
+      # Apps
+      "$mod, RETURN, exec, kitty"
+      "$mod, D,      exec, wofi --show drun"
+
+      ", Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
+    ]
+      ++ (map (key: ''$mod, ${key}, workspace, ${workspaces."${key}"}'') (builtins.attrNames workspaces))
+      ++ (map (key: ''$mod SHIFT, ${key}, movetoworkspace, ${workspaces."${key}"}'') (builtins.attrNames workspaces));
+
+    binde = let
+      pactl = "${pkgs.pulseaudio}/bin/pactl";
+      brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+    in [
+      ", XF86AudioRaiseVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
+      ", XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
+      ", XF86MonBrightnessUp,   exec, ${brightnessctl} set +10%"
+      ", XF86MonBrightnessDown, exec, ${brightnessctl} set  10%-"
+    ];
+
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+    ];
   };
 }

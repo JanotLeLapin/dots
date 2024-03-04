@@ -7,8 +7,8 @@ in {
     homeDirectory = "/home/josephd";
     stateVersion = "23.05";
     packages = with pkgs; [
-      nitch lsd mpc-cli pulseaudio-ctl brightnessctl swaybg wl-clipboard grim slurp # CLI tools
-      pcmanfm pavucontrol blueberry rhythmbox nicotine-plus deluge ario # GUI
+      nitch lsd mpc-cli # CLI tools
+      pcmanfm pavucontrol blueberry nicotine-plus deluge ario # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
