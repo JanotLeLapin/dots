@@ -34,7 +34,7 @@
       gaps_in = 4;
       gaps_out = 10;
       border_size = 4;
-      "col.active_border" = "rgba(${specialArgs.colors.main-0}aa) rgba(${specialArgs.colors.main-1}aa) rgba(${specialArgs.colors.main-2}aa) 135deg";
+      "col.active_border" = "rgba(${specialArgs.theme.colors.main-0}aa) rgba(${specialArgs.theme.colors.main-1}aa) rgba(${specialArgs.theme.colors.main-2}aa) 135deg";
       "col.inactive_border" = "rgba(595959aa)";
 
       layout = "dwindle";

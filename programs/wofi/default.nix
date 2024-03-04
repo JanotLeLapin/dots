@@ -9,5 +9,5 @@
     no_actions = true;
     allow_images = false;
   };
-  style = specialArgs.format "#" ./style.css;
+  style = specialArgs.theme.format "#" ./style.css;
 }

@@ -25,7 +25,9 @@
           ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = (import ./theme.nix inputs);
+          home-manager.extraSpecialArgs = {
+            theme = import ./theme.nix inputs;
+          };
           home-manager.users.josephd = import ./home.nix;
         }
       ];

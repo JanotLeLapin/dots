@@ -55,5 +55,5 @@
       };
     };
   };
-  style = specialArgs.format "#" ./style.css;
+  style = specialArgs.theme.format "#" ./style.css;
 }
