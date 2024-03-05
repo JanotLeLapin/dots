@@ -1,6 +1,6 @@
 { pkgs, specialArgs, ... }: {
   enable = true;
-  # enableNvidiaPatches = true;
+  enableNvidiaPatches = specialArgs.extra.gpu == "nvidia";
   settings = {
     env = "XCURSOR_SIZE,24";
     "$mod" = "SUPER";
