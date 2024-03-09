@@ -1,6 +1,6 @@
 { pkgs, specialArgs, ... }: {
   enable = true;
-  enableNvidiaPatches = specialArgs.extra.gpu == "nvidia";
+  # enableNvidiaPatches = specialArgs.extra.gpu == "nvidia";
   settings = {
     env = "XCURSOR_SIZE,24";
     "$mod" = "SUPER";
@@ -66,7 +66,7 @@
     };
 
     windowrulev2 = [
-      "opacity 0.8,class:(kitty)"
+      "opacity 0.8,class:(Alacritty)"
       "opacity 0.8,class:(discord)"
     ];
 
@@ -107,7 +107,7 @@
       "$mod, down,  movefocus, d"
 
       # Apps
-      "$mod, RETURN, exec, kitty"
+      "$mod, RETURN, exec, alacritty"
       "$mod, D,      exec, wofi --show drun"
 
       ", Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
