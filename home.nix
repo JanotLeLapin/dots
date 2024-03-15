@@ -18,7 +18,7 @@ in {
   wayland.windowManager.hyprland = import ./hyprland inputs;
 
   programs = attrImport "programs" [ "alacritty" "eww" "git" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
-  services = attrImport "services" [ "mako" "mpd" "mpd-discord-rpc" "gammastep" ];
+  services = attrImport "services" [ "mako" "mpd" "mpd-discord-rpc" "gammastep" "syncthing" ];
 
   systemd.user.services.spotifyd.Unit.After = [ "sops-nix.service" ];
 
