@@ -23,6 +23,7 @@
     # SSH
     ssag = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/github";
     ssac = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/codeberg";
+    ssal = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/gitlab";
     ssaa = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/atf";
 
     # Other
