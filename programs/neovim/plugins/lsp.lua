@@ -3,9 +3,13 @@ local cmp = require('cmp')
 
 for _, lsp in ipairs({ 'tsserver', 'rust_analyzer', 'pylsp' }) do
   lspconfig[lsp].setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
   }
 end
+lspconfig.elixirls.setup {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  cmd = { "elixir-ls" },
+}
 
 cmp.setup {
   snippet = {

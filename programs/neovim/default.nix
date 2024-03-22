@@ -2,7 +2,7 @@
   tsPlugins = with pkgs.vimPlugins.nvim-treesitter-parsers; [
     css scss html yuck
     astro svelte
-    nix lua typescript rust
+    nix lua typescript rust elixir
   ];
 
   plugins = with pkgs.vimPlugins; [
