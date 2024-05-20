@@ -21,10 +21,10 @@
     nr = "sudo nixos-rebuild switch --impure --flake";
 
     # SSH
-    ssag = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/github";
-    ssac = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/codeberg";
-    ssal = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/gitlab";
-    ssaa = "ssh-add $XDG_RUNTIME_DIR/secrets/ssh/atf";
+    ssag = "ssh-add $XDG_RUNTIME_DIR/ssh/github";
+    ssac = "ssh-add $XDG_RUNTIME_DIR/ssh/codeberg";
+    ssal = "ssh-add $XDG_RUNTIME_DIR/ssh/gitlab";
+    ssaa = "ssh-add $XDG_RUNTIME_DIR/ssh/atf";
 
     # Other
     l = "lsd -a";

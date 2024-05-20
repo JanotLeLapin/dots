@@ -1,5 +1,5 @@
 keys:
-  - &primary age13a838yxlcxezvzvkejytnn7mxa58yx6c546zx4jwvualvxvw7gvs97tl4a
+  - &primary age1zpcy64tp6v6704haeu8ha5gw2twmn7yh8exwl5n5hfrz5gqjhyeql3nr0z
 creation_rules:
   - path_regex: keys/keys.yaml$
     key_groups:
