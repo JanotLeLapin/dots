@@ -90,16 +90,14 @@
       xterm.enable = false;
     };
 
-    displayManager = {
-      defaultSession = "hyprland";
-      gdm.enable = true;
-    };
+    displayManager.gdm.enable = true;
 
     xkb = {
       layout = "fr";
       variant = "";
     };
   };
+  services.displayManager.defaultSession = "hyprland";
 
   xdg.portal = {
     enable = true;
