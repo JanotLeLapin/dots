@@ -10,6 +10,7 @@ in {
       nitch lsd mpc-cli # CLI tools
       pcmanfm pavucontrol blueberry nicotine-plus deluge ario # GUI
       buildkit docker-compose # Docker
+      tor-browser
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
     file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
   };
@@ -17,7 +18,7 @@ in {
   gtk = import ./gtk inputs;
   wayland.windowManager.hyprland = import ./hyprland inputs;
 
-  programs = attrImport "programs" [ "alacritty" "eww" "git" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
+  programs = attrImport "programs" [ "eww" "git" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "mpd" "mpd-discord-rpc" "gammastep" "syncthing" ];
 
   systemd.user.services.spotifyd.Unit.After = [ "sops-nix.service" ];
@@ -32,12 +33,6 @@ in {
       name = "I2P Browser";
       genericName = "Web Browser";
       exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p";
-      categories = [ "Application" "Network" "WebBrowser" ];
-    };
-    tor-browser = {
-      name = "Tor Browser";
-      genericName = "Web Browser";
-      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P tor";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     firefox = {

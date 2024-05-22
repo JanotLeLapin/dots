@@ -107,7 +107,7 @@
       "$mod, down,  movefocus, d"
 
       # Apps
-      "$mod, RETURN, exec, alacritty"
+      "$mod, RETURN, exec, kitty"
       "$mod, D,      exec, wofi --show drun"
 
       ", Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
