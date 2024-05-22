@@ -47,11 +47,5 @@ in {
       exec = "${(pkgs.discord.override { withOpenASAR = false; })}/bin/discord ${chromium-flags}";
       categories = [ "Application" "Network" ];
     };
-    spotify = {
-      name = "Spotify";
-      genericName = "Music Player";
-      exec = "${pkgs.spotify}/bin/spotify ${chromium-flags}";
-      categories = [ "Application" "Music" ];
-    };
   };
 }
