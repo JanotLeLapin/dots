@@ -11,11 +11,7 @@
       "${pkgs.swaybg}/bin/swaybg -i $HOME/.wallpaper"
     ];
 
-    monitor = [
-      "DP-1,3440x1440,0x0,1"
-      "HDMI-A-1,1920x1080,3440x360,1"
-      "eDP-1,1920x1200,0x0,1"
-    ];
+    monitor = specialArgs.extra.monitors;
 
     input = {
       kb_layout = "fr,us";
