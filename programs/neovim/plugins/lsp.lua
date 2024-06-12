@@ -1,7 +1,13 @@
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 
-for _, lsp in ipairs({ 'tsserver', 'rust_analyzer', 'pylsp', 'svelte' }) do
+local languages = {
+  'tsserver', 'rust_analyzer', 'pylsp',
+  'svelte',
+  'html', 'cssls', 'jsonls'
+}
+
+for _, lsp in ipairs(languages) do
   lspconfig[lsp].setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
   }
