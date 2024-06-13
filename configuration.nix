@@ -114,11 +114,12 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
+      roboto
       nerd
     ];
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "Victor Mono" ];
+        sansSerif = [ "Roboto" ];
         monospace = [ "Victor Mono" ];
       };
     };

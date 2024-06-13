@@ -30,16 +30,18 @@
       gaps_in = 4;
       gaps_out = 10;
       border_size = 4;
-      "col.active_border" = "rgba(${specialArgs.theme.colors.main-0}aa) rgba(${specialArgs.theme.colors.main-1}aa) rgba(${specialArgs.theme.colors.main-2}aa) 135deg";
+      "col.active_border" = "rgba(${specialArgs.theme.colors.main-0}aa) rgba(${specialArgs.theme.colors.main-1}aa) rgba(${specialArgs.theme.colors.main-2}aa) 45deg";
       "col.inactive_border" = "rgba(595959aa)";
 
       layout = "dwindle";
     };
 
-    animations = { enabled = false; };
+    animations = {
+      enabled = true;
+    };
 
     decoration = {
-      rounding = 0;
+      rounding = 8;
       inactive_opacity = 1;
       active_opacity = 1;
       fullscreen_opacity = 1;

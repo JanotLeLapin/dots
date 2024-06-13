@@ -2,17 +2,17 @@
 
 rec {
   colors = {
-    main-0 = "14b8a6";
-    main-1 = "06b6d4";
-    main-2 = "3b82f6";
+    main-0 = "4f46e5";
+    main-1 = "9333ea";
+    main-2 = "db2777";
 
-    bg-0 = "020617";
-    bg-1 = "0f172a";
-    bg-2 = "1e293b";
+    bg-0 = "0c0a09";
+    bg-1 = "1c1917";
+    bg-2 = "292524";
 
-    fg-0 = "f8fafc";
-    fg-1 = "f1f5f9";
-    fg-2 = "e2e8f0";
+    fg-0 = "fafaf9";
+    fg-1 = "e7e5e4";
+    fg-2 = "a8a29e";
   };
 
   format = prefix: file: let
