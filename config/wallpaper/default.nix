@@ -1,4 +1,4 @@
 { pkgs, ... }: {
-  source = ./wallpaper.jpg;
+  source = ./wallpaper.png;
   target = ".wallpaper";
 }
