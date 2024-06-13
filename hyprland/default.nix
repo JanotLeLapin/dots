@@ -64,7 +64,7 @@
     };
 
     windowrulev2 = [
-      "opacity 0.8,class:(Alacritty)"
+      "opacity 0.8,class:(kitty)"
       "opacity 0.8,class:(discord)"
     ];
 
