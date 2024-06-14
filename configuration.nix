@@ -150,6 +150,21 @@
 
   services.deluge.enable = true;
 
+  services.tor = {
+    enable = true;
+    settings = {
+      SocksPolicy = [ "accept *:*" ];
+      BandWidthRate = "100 MBytes";
+    };
+    client = {
+      enable = true;
+      socksListenAddress = {
+        addr = "localhost";
+        port = 9050;
+      };
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
