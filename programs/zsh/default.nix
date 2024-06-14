@@ -30,7 +30,7 @@
     l = "lsd -a";
     c = "clear";
     v = "nvim";
-    h = "helix";
+    h = "hx";
   };
   history = {
     size = 1000;
