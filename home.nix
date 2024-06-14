@@ -21,8 +21,6 @@ in {
   programs = attrImport "programs" [ "eww" "git" "helix" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "mpd" "mpd-discord-rpc" "gammastep" "syncthing" ];
 
-  systemd.user.services.spotifyd.Unit.After = [ "sops-nix.service" ];
-
   sops = import ./keys;
 
   xdg.userDirs.enable = true;
