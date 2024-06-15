@@ -148,6 +148,8 @@
     bash gcc wget glib ripgrep sops # other
   ];
 
+  environment.pathsToLink = [ "/share/zsh" ];
+
   services.deluge.enable = true;
 
   services.tor = {
