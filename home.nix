@@ -8,7 +8,7 @@ in {
     stateVersion = "23.05";
     packages = with pkgs; [
       nitch lsd mpc-cli # CLI tools
-      pcmanfm pavucontrol blueberry nicotine-plus deluge ario insomnia # GUI
+      pcmanfm pavucontrol blueberry nicotine-plus deluge ario insomnia firefox # GUI
       buildkit docker-compose # Docker
       tor-browser
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
@@ -31,12 +31,6 @@ in {
       name = "I2P Browser";
       genericName = "Web Browser";
       exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p";
-      categories = [ "Application" "Network" "WebBrowser" ];
-    };
-    firefox = {
-      name = "Firefox";
-      genericName = "Web Browser";
-      exec = "${pkgs.floorp}/bin/floorp";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
     discord = {
