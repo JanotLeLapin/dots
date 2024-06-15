@@ -1,5 +1,9 @@
 { config, ... }: {
   enable = true;
+  enableCompletion = true;
+  initExtra = let
+    keys = [ "github" "atf" ];
+  in builtins.concatStringsSep "\n" (map (key: "ssh-add -q $(echo $XDG_RUNTIME_DIR)/ssh/${key}") keys);
   shellAliases = {
     # Git
     gst = "git status";
@@ -19,12 +23,6 @@
     nf = "nix flake";
     ns = "nix shell";
     nr = "sudo nixos-rebuild switch --impure --flake";
-
-    # SSH
-    ssag = "ssh-add $XDG_RUNTIME_DIR/ssh/github";
-    ssac = "ssh-add $XDG_RUNTIME_DIR/ssh/codeberg";
-    ssal = "ssh-add $XDG_RUNTIME_DIR/ssh/gitlab";
-    ssaa = "ssh-add $XDG_RUNTIME_DIR/ssh/atf";
 
     # Other
     l = "lsd -a";
