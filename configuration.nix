@@ -167,6 +167,26 @@
     };
   };
 
+  services.i2pd = {
+    enable = true;
+    address = "127.0.0.1";
+    proto = {
+      http = {
+        enable = true;
+        address = "127.0.0.1";
+      };
+      socksProxy = {
+        enable = true;
+        address = "127.0.0.1";
+      };
+      httpProxy = {
+        enable = true;
+        address = "127.0.0.1";
+      };
+      sam.enable = true;
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

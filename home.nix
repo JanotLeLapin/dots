@@ -33,6 +33,12 @@ in {
       exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p";
       categories = [ "Application" "Network" "WebBrowser" ];
     };
+    tor-browser = {
+      name = "Tor Browser";
+      genericName = "Web Browser";
+      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -P tor";
+      categories = [ "Application" "Network" "WebBrowser" ];
+    };
     discord = {
       name = "Discord";
       genericName = "Chatting";
