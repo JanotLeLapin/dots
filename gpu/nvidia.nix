@@ -7,8 +7,6 @@
 
   services.xserver.videoDrivers = ["nvidia"];
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS="1";
   };
@@ -17,7 +15,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
