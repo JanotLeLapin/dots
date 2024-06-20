@@ -12,7 +12,7 @@ in {
       buildkit docker-compose # Docker
       tor-browser
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
-    file = attrImport "config" [ "discord" "river" "zellij" "wallpaper" ];
+    file = attrImport "config" [ "discord" "zellij" "wallpaper" ];
   };
 
   gtk = import ./gtk inputs;
