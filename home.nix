@@ -8,7 +8,7 @@ in {
     stateVersion = "23.05";
     packages = with pkgs; [
       nitch lsd mpc-cli # CLI tools
-      pcmanfm pavucontrol blueberry nicotine-plus qbittorrent ario insomnia floorp mullvad # GUI
+      pcmanfm pavucontrol blueberry nicotine-plus qbittorrent ario insomnia floorp # GUI
       buildkit docker-compose # Docker
       tor-browser
     ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];

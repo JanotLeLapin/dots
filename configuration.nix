@@ -187,6 +187,12 @@
     };
   };
 
+  services.resolved.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+    enableExcludeWrapper = false;
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
