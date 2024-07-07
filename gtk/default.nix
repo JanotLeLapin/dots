@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   enable = true;
   font = {
-    name = "Victor Mono";
+    name = "Roboto";
   };
   theme = {
     package = pkgs.tokyo-night-gtk;
