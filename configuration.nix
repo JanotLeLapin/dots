@@ -31,6 +31,7 @@
       useOSProber = true;
     };
   };
+  boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
 
   # Enable networking
   networking.hostName = "nixos"; # Define your hostname.
