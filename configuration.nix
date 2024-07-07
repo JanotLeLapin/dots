@@ -6,6 +6,9 @@
       ./hardware-configuration.nix
     ];
 
+  containers.tor = import ./containers/tor.nix;
+  containers.i2p = import ./containers/i2p.nix;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.settings.experimental-features = [
@@ -149,43 +152,6 @@
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
-
-  services.deluge.enable = true;
-
-  services.tor = {
-    enable = true;
-    settings = {
-      SocksPolicy = [ "accept *:*" ];
-      BandWidthRate = "100 MBytes";
-    };
-    client = {
-      enable = true;
-      socksListenAddress = {
-        addr = "localhost";
-        port = 9050;
-      };
-    };
-  };
-
-  services.i2pd = {
-    enable = true;
-    address = "127.0.0.1";
-    proto = {
-      http = {
-        enable = true;
-        address = "127.0.0.1";
-      };
-      socksProxy = {
-        enable = true;
-        address = "127.0.0.1";
-      };
-      httpProxy = {
-        enable = true;
-        address = "127.0.0.1";
-      };
-      sam.enable = true;
-    };
-  };
 
   services.resolved.enable = true;
   services.mullvad-vpn = {
