@@ -12,6 +12,13 @@
   };
 
   outputs = { nixpkgs, home-manager, sops-nix, ... } @ inputs: let
+    eachSystem = fn: nixpkgs.lib.genAttrs [
+      "x86_64-linux"
+      "aarch64-linux"
+    ] (system: (fn {
+      inherit system;
+      pkgs = (import nixpkgs { inherit system; });
+    }));
     extra = import ./extra.nix;
   in {
     templates = import ./templates;
@@ -37,5 +44,6 @@
         else []
       ) ++ (if extra.laptop then [ ./tlp.nix ] else []);
     };
+    devShells = eachSystem ({ pkgs, ... }: { default = pkgs.callPackage ./shell.nix {}; });
   };
 }
