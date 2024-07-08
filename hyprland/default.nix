@@ -1,6 +1,5 @@
 { pkgs, specialArgs, ... }: {
   enable = true;
-  # enableNvidiaPatches = specialArgs.extra.gpu == "nvidia";
   settings = {
     env = "XCURSOR_SIZE,24";
     "$mod" = "SUPER";
@@ -11,7 +10,7 @@
       "${pkgs.swaybg}/bin/swaybg -i $HOME/.wallpaper"
     ];
 
-    monitor = specialArgs.extra.monitors;
+    monitor = specialArgs.monitors;
 
     input = {
       kb_layout = "fr,us";

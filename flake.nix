@@ -22,10 +22,12 @@
     extra = import ./extra.nix;
   in {
     templates = import ./templates;
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    devShells = eachSystem ({ pkgs, ... }: { default = pkgs.callPackage ./shell.nix {}; });
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        ./gpu/nvidia.nix
         home-manager.nixosModules.home-manager {
           home-manager.sharedModules = [
             sops-nix.homeManagerModules.sops
@@ -34,16 +36,34 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             theme = import ./theme.nix inputs;
-            extra = import ./extra.nix;
+            monitors = [
+              "DP-1,3440x1440,0x0,1"
+              "HDMI-1,1920x1080,3440x360,1"
+            ];
           };
           home-manager.users.josephd = import ./home.nix;
         }
-      ] ++ (
-        if extra.gpu == "intel" then [ ./gpu/intel.nix ]
-        else if extra.gpu == "nvidia" then [ ./gpu/nvidia.nix ]
-        else []
-      ) ++ (if extra.laptop then [ ./tlp.nix ] else []);
+      ];
     };
-    devShells = eachSystem ({ pkgs, ... }: { default = pkgs.callPackage ./shell.nix {}; });
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+        ./gpu/nvidia.nix
+        ./tlp.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.sharedModules = [
+            sops-nix.homeManagerModules.sops
+          ];
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            theme = import ./theme.nix inputs;
+            monitors = [ "eDP-1,1920x1080,0x0,1" ];
+          };
+          home-manager.users.josephd = import ./home.nix;
+        }
+      ];
+    };
   };
 }
