@@ -7,19 +7,18 @@ in {
     homeDirectory = "/home/josephd";
     stateVersion = "23.05";
     packages = with pkgs; [
-      nitch lsd mpc-cli # CLI tools
-      pcmanfm pavucontrol blueberry nicotine-plus qbittorrent ario insomnia floorp # GUI
+      nitch lsd # CLI tools
+      pcmanfm pavucontrol blueberry insomnia floorp # GUI
       buildkit docker-compose # Docker
-      tor-browser
-    ] ++ listImport "pkgs" [ "jdtls" "gdlauncher" ];
+    ] ++ listImport "pkgs" [ "gdlauncher" ];
     file = attrImport "config" [ "discord" "zellij" "wallpaper" "mullvad-browser" ];
   };
 
   gtk = import ./gtk inputs;
   wayland.windowManager.hyprland = import ./hyprland inputs;
 
-  programs = attrImport "programs" [ "eww" "git" "helix" "kitty" "neovim" "starship" "vscode" "waybar" "wofi" "zellij" "zsh" ];
-  services = attrImport "services" [ "mako" "mpd" "mpd-discord-rpc" "gammastep" "syncthing" ];
+  programs = attrImport "programs" [ "eww" "git" "helix" "kitty" "starship" "waybar" "wofi" "zellij" "zsh" ];
+  services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;
 
