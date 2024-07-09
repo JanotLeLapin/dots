@@ -109,7 +109,11 @@
       variant = "";
     };
   };
-  services.displayManager.defaultSession = "hyprland";
+
+  services.libinput = if wayland then {} else {
+    enable = true;
+    touchpad.naturalScrolling = true;
+  };
 
   xdg.portal = {
     enable = true;
