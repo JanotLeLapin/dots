@@ -15,9 +15,9 @@ in {
   };
 
   gtk = import ./gtk inputs;
-  wayland.windowManager.hyprland = import ./hyprland inputs;
+  # wayland.windowManager.hyprland = import ./hyprland inputs;
 
-  programs = attrImport "programs" [ "eww" "git" "helix" "kitty" "rofi" "starship" "waybar" "wofi" "zellij" "zsh" ];
+  programs = attrImport "programs" [ "git" "helix" "kitty" "rofi" "starship" "zellij" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;
