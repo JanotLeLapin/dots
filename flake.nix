@@ -19,12 +19,12 @@
       inherit system;
       pkgs = (import nixpkgs { inherit system; });
     }));
-    extra = import ./extra.nix;
+    wayland = true;
   in {
     templates = import ./templates;
     devShells = eachSystem ({ pkgs, ... }: { default = pkgs.callPackage ./shell.nix {}; });
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs wayland; };
       modules = [
         ./configuration.nix
         ./gpu/nvidia.nix
@@ -35,6 +35,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
+            inherit wayland;
             theme = import ./theme.nix inputs;
             monitors = [
               "DP-1,3440x1440,0x0,1"
@@ -46,7 +47,7 @@
       ];
     };
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs wayland; };
       modules = [
         ./configuration.nix
         ./gpu/nvidia.nix
@@ -58,6 +59,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
+            inherit wayland;
             theme = import ./theme.nix inputs;
             monitors = [ "eDP-1,1920x1080,0x0,1" ];
           };

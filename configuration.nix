@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, wayland, ... }:
 
 {
   imports =
@@ -9,7 +9,9 @@
   containers.tor = import ./containers/tor.nix;
   containers.i2p = import ./containers/i2p.nix;
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = if wayland then {
+    NIXOS_OZONE_WL = "1";
+  } else {};
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -31,7 +33,6 @@
       useOSProber = true;
     };
   };
-  boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
 
   # Enable networking
   networking.hostName = "nixos"; # Define your hostname.

@@ -1,4 +1,4 @@
-{ pkgs, ... } @ inputs: let
+{ pkgs, wayland, ... } @ inputs: let
   listImport = path: modules: (map (module: import (./. + "/${path}/${module}") inputs) modules);
   attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}") inputs);
 in {
@@ -24,7 +24,7 @@ in {
 
   xdg.userDirs.enable = true;
   xdg.desktopEntries = let
-    chromium-flags = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    chromium-flags = if wayland then "--enable-features=UseOzonePlatform --ozone-platform=wayland" else "";
   in {
     i2p-browser = {
       name = "I2P Browser";
