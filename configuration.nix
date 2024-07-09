@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./dwm
     ];
 
   containers.tor = import ./containers/tor.nix;
@@ -95,7 +96,13 @@
       xterm.enable = false;
     };
 
-    displayManager.gdm.enable = true;
+    # displayManager.gdm.enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      extraConfig = ''
+        logind-check-graphical=true
+      '';
+    };
 
     xkb = {
       layout = "fr";

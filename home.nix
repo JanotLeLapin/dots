@@ -8,7 +8,7 @@ in {
     stateVersion = "23.05";
     packages = with pkgs; [
       nitch lsd # CLI tools
-      pcmanfm pavucontrol blueberry insomnia floorp # GUI
+      pcmanfm pavucontrol blueberry insomnia floorp dmenu # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "gdlauncher" ];
     file = attrImport "config" [ "discord" "zellij" "wallpaper" "mullvad-browser" ];
