@@ -1,0 +1,25 @@
+From 59a95fedf00e4f0b8bfda13006c4d1db6b7e7247 Mon Sep 17 00:00:00 2001
+From: Joseph DALY <joseph300905@gmail.com>
+Date: Tue, 9 Jul 2024 14:05:22 +0200
+Subject: [PATCH] remove dmenu
+
+---
+ dwm.c | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/dwm.c b/dwm.c
+index 67c6b2b..9471458 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -1649,8 +1649,6 @@ spawn(const Arg *arg)
+ {
+ 	struct sigaction sa;
+ 
+-	if (arg->v == dmenucmd)
+-		dmenumon[0] = '0' + selmon->num;
+ 	if (fork() == 0) {
+ 		if (dpy)
+ 			close(ConnectionNumber(dpy));
+-- 
+2.45.1
+
