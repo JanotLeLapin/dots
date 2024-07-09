@@ -19,6 +19,7 @@
       inherit system;
       pkgs = (import nixpkgs { inherit system; });
     }));
+    hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
     wayland = true;
   in {
     templates = import ./templates;
@@ -26,6 +27,7 @@
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs wayland; };
       modules = [
+        "${hardware}/msi/b550-a-pro"
         ./configuration.nix
         ./gpu/nvidia.nix
         home-manager.nixosModules.home-manager {
@@ -49,9 +51,8 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs wayland; };
       modules = [
+        "${hardware}/asus/fx506hm"
         ./configuration.nix
-        ./gpu/nvidia.nix
-        ./tlp.nix
         home-manager.nixosModules.home-manager {
           home-manager.sharedModules = [
             sops-nix.homeManagerModules.sops
