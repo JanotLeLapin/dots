@@ -53,6 +53,17 @@
       modules = [
         "${hardware}/asus/fx506hm"
         ./configuration.nix
+        ({ pkgs, ... }: {
+          hardware.asus.battery = {
+            chargeUpto = 85;
+            enableChargeUptoScript = true;
+          };
+
+          boot.kernelModules = [ "i2c-dev" ];
+          hardware.i2c.enable = true;
+          services.udev.packages = [ pkgs.openrgb ];
+          services.hardware.openrgb.enable = true;
+        })
         home-manager.nixosModules.home-manager {
           home-manager.sharedModules = [
             sops-nix.homeManagerModules.sops
