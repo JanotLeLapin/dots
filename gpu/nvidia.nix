@@ -14,6 +14,7 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
+    forceFullCompositionPipeline = !wayland;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
