@@ -117,8 +117,8 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = "wlr";
-    extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
+    config.common.default = "gtk";
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
   hardware.bluetooth.enable = true;
@@ -147,6 +147,8 @@
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
+
+  programs.dconf.enable = true;
 
   # Define a user account
   programs.zsh.enable = true;
