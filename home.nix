@@ -8,6 +8,7 @@ in {
     stateVersion = "23.05";
     packages = with pkgs; [
       nitch lsd # CLI tools
+      maim xclip # Screenshot tools
       pcmanfm pavucontrol blueberry insomnia floorp dmenu # GUI
       buildkit docker-compose # Docker
     ] ++ listImport "pkgs" [ "gdlauncher" ];
