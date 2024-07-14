@@ -103,6 +103,11 @@
         logind-check-graphical=true
       '';
     };
+    displayManager.sessionCommands = ''
+      ${(pkgs.dwmblocks.override {
+        conf = ./dwmblocks/config.h;
+      })}/bin/dwmblocks &
+    '';
 
     xkb = {
       layout = "fr";
