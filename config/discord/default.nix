@@ -4,7 +4,7 @@
     sparseCheckout = [
       "flavors"
     ];
-    hash = "sha256-a1rfJcVm4QE0+NR5BQGv7LtJFMiXNtEXaFyHenFw01s=";
+    hash = "sha256-op58ICy8sXX8lDhXBXtA4nJqbneVQjysonbKKUA2nZM=";
   };
 in {
   text = builtins.toJSON {
