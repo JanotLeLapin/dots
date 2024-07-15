@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./dwm
     ];
 
   containers.tor = import ./containers/tor.nix;
@@ -96,6 +95,16 @@
       xterm.enable = false;
     };
 
+    windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.override {
+        conf = ./dwm.h;
+        patches = [
+          ./patches/dwm/remove-dmenu.diff
+        ];
+      };
+    };
+
     # displayManager.gdm.enable = true;
     displayManager.lightdm = {
       enable = true;
@@ -105,7 +114,7 @@
     };
     displayManager.sessionCommands = ''
       ${(pkgs.dwmblocks.override {
-        conf = ./dwmblocks/config.h;
+        conf = ./dwmblocks.h;
       })}/bin/dwmblocks &
     '';
 

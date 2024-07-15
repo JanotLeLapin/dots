@@ -12,7 +12,7 @@ in {
       pcmanfm pavucontrol blueberry insomnia floorp dmenu # GUI
       buildkit docker-compose # Docker
       (st.override {
-        conf = builtins.readFile st/config.h;
+        conf = builtins.readFile ./st.h;
         extraLibs = with pkgs; [ harfbuzz ];
         patches = [
           (pkgs.fetchurl {
