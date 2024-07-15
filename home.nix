@@ -11,6 +11,16 @@ in {
       maim xclip # Screenshot tools
       pcmanfm pavucontrol blueberry insomnia floorp dmenu # GUI
       buildkit docker-compose # Docker
+      (st.override {
+        conf = builtins.readFile st/config.h;
+        extraLibs = with pkgs; [ harfbuzz ];
+        patches = [
+          (pkgs.fetchurl {
+            url = "https://st.suckless.org/patches/ligatures/0.9/st-ligatures-20240105-0.9.diff";
+            hash = "sha256-Wcm2RTPlokGFlCsG/GmBEMrwNFpAxgEcqDaTEqKRhL0=";
+          })
+        ];
+      })
     ] ++ listImport "pkgs" [ "gdlauncher" ];
     file = attrImport "config" [ "discord" "zellij" "wallpaper" "mullvad-browser" ];
   };
@@ -18,7 +28,7 @@ in {
   gtk = import ./gtk inputs;
   # wayland.windowManager.hyprland = import ./hyprland inputs;
 
-  programs = attrImport "programs" [ "git" "helix" "kitty" "rofi" "starship" "zellij" "zsh" ];
+  programs = attrImport "programs" [ "git" "helix" "starship" "rofi" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;

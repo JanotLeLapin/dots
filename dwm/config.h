@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 /* commands */
 // static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *roficmd[]   = { "rofi", "-show", "drun", NULL };
-static const char *termcmd[]   = { "kitty", NULL };
+static const char *termcmd[]   = { "st", NULL };
 static const char *screencmd[] = { "sh", "-c", "maim -s | xclip -selection clipboard -t image/png", NULL };
 
 static const Key keys[] = {
