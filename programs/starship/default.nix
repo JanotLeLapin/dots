@@ -1,5 +1,5 @@
 _: let
-  prompt = success: "[](bold ${if success then "green" else "red"})";
+  prompt = success: "[>](bold ${if success then "green" else "red"})";
 in {
   enable = true;
   enableZshIntegration = true;
