@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   enable = true;
+  defaultEditor = true;
   ignores = [
     "build/" "dist/" "target/"
     "node_modules/"
