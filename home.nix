@@ -23,7 +23,7 @@ in {
         ];
       })
     ] ++ listImport "pkgs" [ "gdlauncher" ];
-    file = attrImport "config" [ "discord" "wallpaper" "mullvad-browser" ];
+    file = attrImport "config" [ "discord" "helix" "wallpaper" "mullvad-browser" ];
   };
 
   gtk = import ./gtk inputs;
