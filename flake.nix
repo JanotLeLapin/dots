@@ -9,9 +9,13 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helix = {
+      url = "github:mattwparas/helix/steel-event-system";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, sops-nix, helix, ... } @ inputs: let
     eachSystem = fn: nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
@@ -37,7 +41,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit wayland;
+            inherit wayland helix;
             theme = import ./theme.nix inputs;
             monitors = [
               "DP-1,3440x1440,0x0,1"
@@ -71,7 +75,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit wayland;
+            inherit wayland helix;
             theme = import ./theme.nix inputs;
             monitors = [ "eDP-1,1920x1080,0x0,1" ];
           };

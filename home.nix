@@ -1,4 +1,4 @@
-{ pkgs, wayland, ... } @ inputs: let
+{ pkgs, wayland, helix, ... } @ inputs: let
   listImport = path: modules: (map (module: import (./. + "/${path}/${module}") inputs) modules);
   attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}") inputs);
 in {
@@ -11,6 +11,7 @@ in {
       maim xclip # Screenshot tools
       pcmanfm pavucontrol blueberry insomnia floorp dmenu # GUI
       buildkit docker-compose # Docker
+      (helix.packages."${pkgs.system}".default)
       (st.override {
         conf = builtins.readFile ./st.h;
         extraLibs = with pkgs; [ harfbuzz ];
@@ -28,7 +29,7 @@ in {
   gtk = import ./gtk inputs;
   # wayland.windowManager.hyprland = import ./hyprland inputs;
 
-  programs = attrImport "programs" [ "git" "helix" "starship" "rofi" "zsh" ];
+  programs = attrImport "programs" [ "git" "starship" "rofi" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;
