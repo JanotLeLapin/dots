@@ -1,6 +1,7 @@
 { pkgs, ... }: let
   theme = pkgs.fetchgit {
     url = "https://github.com/refact0r/midnight-discord";
+    rev = "6bcea95e1af5ded90eb68cb1b7ef28669da2f6f7";
     sparseCheckout = [
       "flavors"
     ];
