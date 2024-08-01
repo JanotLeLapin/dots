@@ -4,8 +4,8 @@
     name = "Roboto";
   };
   theme = {
-    package = pkgs.tokyo-night-gtk;
-    name = "Tokyonight-Dark-BL";
+    package = pkgs.tokyonight-gtk-theme;
+    name = "Tokyonight-Dark";
   };
   iconTheme = {
     package = pkgs.tela-circle-icon-theme;
