@@ -4,8 +4,13 @@
     name = "Roboto";
   };
   theme = {
-    package = pkgs.tokyonight-gtk-theme;
-    name = "Tokyonight-Dark";
+    package = pkgs.tokyonight-gtk-theme.override {
+      colorVariants = [ "dark" ];
+      sizeVariants = [ "standard" ];
+      themeVariants = [ "purple" ];
+      tweakVariants = [ "black" ];
+    };
+    name = "Tokyonight-Purple-Dark";
   };
   iconTheme = {
     package = pkgs.tela-circle-icon-theme;
