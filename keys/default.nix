@@ -5,5 +5,6 @@
   secrets = {
     "ssh/github" = { path = "%r/ssh/github"; };
     "ssh/atf" = { path = "%r/ssh/atf"; };
+    "ssh/sapphire" = { path = "%r/ssh/sapphire"; };
   };
 }

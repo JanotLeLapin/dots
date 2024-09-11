@@ -33,6 +33,7 @@ in {
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;
+  systemd.user.services.mbsync.Unit.After = [ "sops-nix.services" ];
 
   xdg.userDirs.enable = true;
   xdg.desktopEntries = let

@@ -1,6 +1,7 @@
 ssh:
     github: ENC[AES256_GCM,data:T/NT02/7C0ufmXuxrOBpq2CgYiHZwug3SiNx8DALK9bQXqoBarT5GgeSQxHgASRD1V9ZAwuJJ6z2EznYKGZ7OsHaTY56U4qubFwNWgfxsUwqh+/Qs/zFpN/jhPTG7clfbK5yBzRAD5Ore8Tip/nneta6lELh//1BeWtDK+zrWhvsfx0fH+fFX00GBOB05ZLh1SMMvXPu0aGrvmS7j/3eJSAQqaj33b+jGPi3xk21OfWsOScTgj3kSitD3dfOQ0cw7gCg/d9CuVkKnCM6EvV8XxmBznXl482sdrA4FA5jYzqC1DRfveobqEQIeaqmpiaKCOBSuBUyELtYXvy07BwVAOnB2VJEv4xy8cXE+cu0IgXKjW2+zjuxLumEm7c3O8PPsXqEtlasDSX0I5gsIAtcKxl4ohRonmxH1fDw0wTqkBF7JSl2SZMt+FegPFGpsqw+hhanoBWbZDe08U1f5CYroegsbNcq8YIoP47iC5pPHh8oL9xEP18iSjvB1uIbuAvp32AGdt3WqjAaHddt0gcerVNE0vIz/q8WDhdYuHAoVtGv2Ec=,iv:bUyDvw/6dt4nJDM9a8ZOCoyNCsqcausV9HWnu13oAas=,tag:1TZXzyfQW1WHM/ly0QKKjQ==,type:str]
     atf: ENC[AES256_GCM,data:92cjSQ5+MAhKk9gC4H377x/Qz7zkVQoGq+HrWN9dFoDwUOyGrULjVJLAb1xo0HVH/c7KsgRnEQ1oQkRw0PhkOrwovWG0iG8VDKiHk2FHfO0JLSLvRBZILyMC7JEwbUsOj738mWDYVgAD/Hg5SSXNKT6dQ4sEfeBjIvOW+Xtm5kzDtl6yeIjur84lKPluFPXZu47H3wW6+tBr5N73HKIu62xwtIvTnKMaO2OlaocUKYeU/c27d9ryc0gO53sopeKplaLrYsNvQz2Irfgeqm5KjvgysGWugcYAqeutGadU6PwthsQHT2tRmhulVByTsJfuABZh/m9CWzvN2LgBo1xpegcXpmEi7bPx/QCCz14cMv/5925wac8IdxogfDLiKux6hkfI91JrQWumn41RdgEIVbxS2fV0ZgArjVBKa9EmO5fS27jMh5ypK5qyulv4L2uqyHPs7535d6IZlykxtq9mlrfbWs2R1U7cnTwUQvoiukyPKhIldEorWUilESE++YZ5BhLHl8c16UUjIiSfGUyr3XqRy4VbCX6KBiXDLroBFeOp5d0=,iv:fjzhioBo/oK+h19pLcyQ4F97wxmaWAlMFWieJ6pnEmc=,tag:j0Wz5qhUwyMoKoTnd7+XQw==,type:str]
+    sapphire: ENC[AES256_GCM,data:fBF+5/kHiIoSJNnTLzOhkyQ7Flc8KudjKe2+C5FuLUTaxzyz9pZzPX89gdhKtbWTUQOt1t/Ynvv2nNkoJIFQD//EBrkQY5aoLVlR8LjHDZBkMEyq49jYaLqc92XxBdPgd+xFk87VYdu38PHv8cC8VEqi7S2L1Ehw2l80dwjU4HLqXmy6FiliE6ZWrhYBhQXIFfuW9iQkauRVPs+Qc9gdRtL6xY4SoFRUI6u5IF5TDC8iKKQWpsThffaWdSD+DAjib9nFWi758cHFAFJ50RPEE8iOkkoK7RTadNPZvrefrONdqAVBKUO+OaVhEl72rBgpxaVG1tPEmqX9kFUNhlAAkPrPZu7tx8CpkpcEtWA4GZLy9jRpy8u2wXqlW8un7kGlQT8bLFVyKYcJ49P/uHuU9BS+vhy+R6UhetolO9VAfZaWGD4AUgOKWns1+80iVSEDJIiV03Qk+Oa0iyhAQPlJPdVQI0hZYvjT1OKtl4sSzRUXf5BFX8lTczkwsckkgIDTRogBhIgErykjruS/0srL34PWK8ipap8bcKT35nUAJ3DBqRE=,iv:czuzL5pFZfTCBv8+lLHeWjBTdMqn6nTypwbNFCY8clg=,tag:2tZBnUQFzZHTWffGh7IJRw==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -16,8 +17,8 @@ sops:
             VGRLdFpFQ09oR3VLcjlwbnNFaGdBNE0KJNa2c5aNPz58koIIFXOT28sbH5lk/3wp
             Wi0XJLxu/dqCiigbCasIXqFYydRDl9jhh87d9vRSbpxOJoQ9ghvGyg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-14T21:40:23Z"
-    mac: ENC[AES256_GCM,data:eeUkmCtKcvZV7tWN9sxYOOam3ktWH9pPM98FD/tRTsUiHybh+Mt9VsDtcsfkQFps2sFx4HeTYcgnWqt7UG/vuYNuJFXcnb0AyHSyv+EAmrH3X56GGr2DbN8a67m16ZXV4d9I3ALAtiH9AbjHysgXEkH+3vvB6SVyealvWReRov4=,iv:ugTVLkwxK7gg51bi8dX4HI6lVY9bqesWEY3yhQ1g0EU=,tag:3sBXzA9CFADzmS36O8Wz4g==,type:str]
+    lastmodified: "2024-08-06T12:26:45Z"
+    mac: ENC[AES256_GCM,data:+302pMoL/VgXQLO7k2G2I++eS2S6xWuEaZVkk0mbNs2B+rn2P57SaOyQe+JeAV1frj7CXJeCOZV96NUN2WkMsrS1vlksscxrnrlhgcnO12U1Dc0A5f7JqhGBoZEBbRQkTn9aPwyFB7K76YTimRv6TlDC3S/ax7ekg1v8IRnKrL4=,iv:0yciwlukdkmW0G+2a2vkj01elGBQOG8bCPOnfKlYago=,tag:JSW9wuig7xzKjSdppZrFPw==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
-    version: 3.8.1
+    version: 3.9.0
