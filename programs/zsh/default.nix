@@ -2,7 +2,7 @@
   enable = true;
   enableCompletion = true;
   initExtra = let
-    keys = [ "github" "atf" "sapphire" ];
+    keys = [ "github" "codeberg" "atf" "sapphire" ];
   in builtins.concatStringsSep "\n" (map (key: "ssh-add -q $(echo $XDG_RUNTIME_DIR)/ssh/${key}") keys);
   shellAliases = {
     # Git
