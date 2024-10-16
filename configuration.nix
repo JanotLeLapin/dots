@@ -94,16 +94,6 @@
       xterm.enable = false;
     };
 
-    windowManager.dwm = {
-      enable = true;
-      package = pkgs.dwm.override {
-        conf = ./dwm.h;
-        patches = [
-          ./patches/dwm/remove-dmenu.diff
-        ];
-      };
-    };
-
     displayManager.gdm.enable = true;
     displayManager.sessionPackages = [
       (pkgs.river.overrideAttrs {
@@ -122,11 +112,6 @@
         passthru.providedSessions = [ "river" ];
       })
     ];
-    displayManager.sessionCommands = ''
-      ${(pkgs.dwmblocks.override {
-        conf = ./dwmblocks.h;
-      })}/bin/dwmblocks &
-    '';
 
     xkb = {
       layout = "fr";
