@@ -28,6 +28,7 @@ in {
 
   gtk = import ./gtk inputs;
   # wayland.windowManager.hyprland = import ./hyprland inputs;
+  wayland.windowManager.river = import ./river inputs;
 
   programs = attrImport "programs" [ "git" "starship" "rofi" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];

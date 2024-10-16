@@ -24,7 +24,7 @@
       pkgs = (import nixpkgs { inherit system; });
     }));
     hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
-    wayland = false;
+    wayland = true;
   in {
     templates = import ./templates;
     devShells = eachSystem ({ pkgs, ... }: { default = pkgs.callPackage ./shell.nix {}; });

@@ -104,13 +104,24 @@
       };
     };
 
-    # displayManager.gdm.enable = true;
-    displayManager.lightdm = {
-      enable = true;
-      extraConfig = ''
-        logind-check-graphical=true
-      '';
-    };
+    displayManager.gdm.enable = true;
+    displayManager.sessionPackages = [
+      (pkgs.river.overrideAttrs {
+        postInstall = let
+          riverSession = ''
+            [Desktop Entry]
+            Name=River
+            Comment=Dynamic Wayland compositor
+            Exec=river
+            Type=Application
+          '';
+        in ''
+          mkdir -p $out/share/wayland-sessions
+          echo "${riverSession}" > $out/share/wayland-sessions/river.desktop
+        '';
+        passthru.providedSessions = [ "river" ];
+      })
+    ];
     displayManager.sessionCommands = ''
       ${(pkgs.dwmblocks.override {
         conf = ./dwmblocks.h;
@@ -177,6 +188,21 @@
     zip unzip # archives
     feh mpv # multimedia
     bash gcc wget glib ripgrep sops # other
+    (river.overrideAttrs {
+      postInstall = let
+        riverSession = ''
+          [Desktop Entry]
+          Name=River
+          Comment=Dynamic Wayland compositor
+          Exec=river
+          Type=Application
+        '';
+      in ''
+        mkdir -p $out/share/wayland-sessions
+        echo "${riverSession}" > $out/share/wayland-sessions/river.desktop
+      '';
+      passthru.providedSessions = [ "river" ];
+    })
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
