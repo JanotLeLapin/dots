@@ -1,8 +1,13 @@
 { pkgs, specialArgs, ... }: {
   enable = true;
-  extraConfig = ''
+  extraConfig = let
+    touchpad = "$(riverctl list-inputs | grep Touchpad)";
+  in ''
     rivertile -view-padding 6 -outer-padding 6 &
     ${toString (map (monitor: "${pkgs.wlr-randr}/bin/wlr-randr --output ${monitor.name} --mode ${monitor.mode} --pos ${monitor.pos} --scale 1\n") specialArgs.monitors)}
+
+    riverctl input ${touchpad} tap enabled
+    riverctl input ${touchpad} natural-scroll enabled
   '';
   settings = {
     border-width = 2;
