@@ -18,6 +18,8 @@
 
         "Super H" = "send-layout-cmd rivertile 'main-ratio -0.05'";
         "Super L" = "send-layout-cmd rivertile 'main-ratio +0.05'";
+
+        "Super D" = "spawn 'wofi --show drun'";
       };
     };
     keyboard-layout = "fr";

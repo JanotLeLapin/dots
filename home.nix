@@ -30,7 +30,7 @@ in {
   # wayland.windowManager.hyprland = import ./hyprland inputs;
   wayland.windowManager.river = import ./river inputs;
 
-  programs = attrImport "programs" [ "git" "starship" "rofi" "zsh" ];
+  programs = attrImport "programs" [ "git" "starship" "wofi" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
 
   sops = import ./keys;
