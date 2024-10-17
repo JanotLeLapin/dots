@@ -2,6 +2,7 @@
   enable = true;
   extraConfig = ''
     rivertile -view-padding 6 -outer-padding 6 &
+    ${toString (map (monitor: "${pkgs.wlr-randr}/bin/wlr-randr --output ${monitor.name} --mode ${monitor.mode} --pos ${monitor.pos} --scale 1\n") specialArgs.monitors)}
   '';
   settings = {
     border-width = 2;

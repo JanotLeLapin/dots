@@ -44,8 +44,8 @@
             inherit wayland helix;
             theme = import ./theme.nix inputs;
             monitors = [
-              "DP-1,3440x1440,0x0,1"
-              "HDMI-1,1920x1080,3440x360,1"
+              { name = "DP-1"; mode = "3440x1440"; pos = "0,0"; }
+              { name = "HDMI-A-1"; mode = "1920x1080"; pos = "3440,360"; }
             ];
           };
           home-manager.users.josephd = import ./home.nix;
@@ -77,7 +77,7 @@
           home-manager.extraSpecialArgs = {
             inherit wayland helix;
             theme = import ./theme.nix inputs;
-            monitors = [ "eDP-1,1920x1080,0x0,1" ];
+            monitors = [ { name = "eDP-1"; mode = "1920x1080"; pos = "0,0"; } ];
           };
           home-manager.users.josephd = import ./home.nix;
         }
