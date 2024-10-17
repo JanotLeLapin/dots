@@ -33,6 +33,7 @@
       useOSProber = true;
     };
   };
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Enable networking
   networking.hostName = "nixos"; # Define your hostname.
