@@ -48,7 +48,7 @@
               { name = "HDMI-A-1"; mode = "1920x1080"; pos = "3440,360"; }
             ];
           };
-          home-manager.users.josephd = import ./home.nix;
+          home-manager.users.josephd = import ./home;
         }
       ];
     };
@@ -79,7 +79,7 @@
             theme = import ./theme.nix inputs;
             monitors = [ { name = "eDP-1"; mode = "1920x1080"; pos = "0,0"; } ];
           };
-          home-manager.users.josephd = import ./home.nix;
+          home-manager.users.josephd = import ./home;
         }
       ];
     };

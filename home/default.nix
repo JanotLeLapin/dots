@@ -22,13 +22,32 @@ in {
           })
         ];
       })
-    ] ++ listImport "pkgs" [ "gdlauncher" ];
+      (let
+        name = "gdlauncher";
+        version = "1.1.30";
+        src = pkgs.fetchurl {
+          url = "https://github.com/gorilla-devs/GDLauncher/releases/download/${version}/GDLauncher-linux-setup.AppImage";
+          hash = "sha256-4cXT3exhoMAK6gW3Cpx1L7cm9Xm0FK912gGcRyLYPwM=";
+        };
+        appimageContents = pkgs.appimageTools.extractType2 {
+          inherit name src;
+        };
+      in pkgs.appimageTools.wrapType2 {
+        inherit name version src;
+        extraInstallCommands = ''
+          install -m 444 -D ${appimageContents}/${name}.desktop $out/share/applications/${name}.desktop
+          install -m 444 -D ${appimageContents}/${name}.png $out/share/icons/hicolor/512x512/apps/${name}.png
+          substituteInPlace $out/share/applications/${name}.desktop \
+          --replace 'Exec=AppRun --no-sandbox %U' 'Exec=${name} %U'
+        '';
+      })
+    ];
     file = attrImport "config" [ "discord" "helix" "wallpaper" "mullvad-browser" ];
   };
 
-  gtk = import ./gtk inputs;
-  # wayland.windowManager.hyprland = import ./hyprland inputs;
-  wayland.windowManager.river = import ./river inputs;
+  gtk = import ./gtk.nix inputs;
+  # wayland.windowManager.hyprland = import ./hyprland.nix inputs;
+  wayland.windowManager.river = import ./river.nix inputs;
 
   programs = attrImport "programs" [ "git" "starship" "wofi" "zsh" ];
   services = attrImport "services" [ "mako" "gammastep" "syncthing" ];
