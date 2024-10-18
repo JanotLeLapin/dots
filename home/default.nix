@@ -41,7 +41,25 @@ in {
           --replace 'Exec=AppRun --no-sandbox %U' 'Exec=${name} %U'
         '';
       })
-    ];
+    ] ++ (map (game: pkgs.stdenv.mkDerivation {
+      name = "game-" + game;
+      version = "a78c0b917ffec5fed2f7b64dddceb6d3c57e33d5";
+      src = pkgs.fetchzip {
+        url = "https://github.com/sponege/terminal-games/archive/a78c0b917ffec5fed2f7b64dddceb6d3c57e33d5.zip";
+        hash = "sha256-nWH0u84EZMbHqv1PM1OkjSW0LRzNC5pjaH9K77e2fUM=";
+      };
+
+      buildInputs = with pkgs; [ gcc gnumake ncurses ];
+
+      buildPhase = ''
+        mkdir -p build
+        gcc ${game}/${game}.c -o build/${game} -lncurses -Wno-error=format-security
+      '';
+      installPhase = ''
+        mkdir -p $out/bin
+        mv build/${game} $out/bin/game-${game}
+      '';
+    }) [ "snake" "tetris" ]);
     file = attrImport "config" [ "discord" "helix" "wallpaper" "mullvad-browser" ];
   };
 
