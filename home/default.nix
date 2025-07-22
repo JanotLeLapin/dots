@@ -32,4 +32,9 @@ in {
       };
     };
   };
+
+  gtk = import ./gtk.nix inputs;
+  dconf.settings."org/gnome/desktop/interface" = {
+    color-scheme = "prefer-dark";
+  };
 }
