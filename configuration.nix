@@ -60,11 +60,13 @@
   console.keyMap = "fr";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
   users.users.josephd = {
     isNormalUser = true;
     description = "Joseph DALY";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ git ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages

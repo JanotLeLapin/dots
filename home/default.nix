@@ -1,4 +1,7 @@
-{ pkgs, ... } @ inputs: {
+{ pkgs, ... } @ inputs: let
+  listImport = path: modules: (map (module: import (./. + "/${path}/${module}.nix") inputs) modules);
+  attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}.nix") inputs);
+in {
   home = {
     username = "josephd";
     homeDirectory = "/home/josephd";
@@ -9,6 +12,8 @@
       maim xclip # screenshot
     ];
   };
+
+  programs = attrImport "programs" [ "zsh" ];
 
   xsession.windowManager.i3 = {
     enable = true;
