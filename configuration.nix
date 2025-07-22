@@ -56,6 +56,17 @@
     defaultSession = "none+i3";
   };
 
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      naturalScrolling = true;
+      disableWhileTyping = true;
+      tapping = true;
+      accelSpeed = "0.1";
+      scrollMethod = "twofinger";
+    };
+  };
+
   # Configure console keymap
   console.keyMap = "fr";
 
