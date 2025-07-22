@@ -44,9 +44,16 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "azerty";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "fr";
+      variant = "azerty";
+    };
+    windowManager.i3.enable = true;
+  };
+  services.displayManager = {
+    defaultSession = "none+i3";
   };
 
   # Configure console keymap
