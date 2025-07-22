@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... } @ inputs:
 
 {
   imports =
@@ -115,6 +115,8 @@
   };
 
   programs.dconf.enable = true;
+
+  services.tlp = import ./tlp.nix inputs;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
