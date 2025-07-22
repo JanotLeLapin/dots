@@ -15,7 +15,7 @@
       pkgs = (import nixpkgs { inherit system; });
     }));
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.janotlelapin = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
