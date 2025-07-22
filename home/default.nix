@@ -7,7 +7,7 @@ in {
     homeDirectory = "/home/josephd";
     stateVersion = "25.05";
     packages = with pkgs; [
-      nitch lsd # cli
+      nitch # cli
       st pcmanfm pavucontrol blueberry floorp dmenu # gui
       maim xclip # screenshot
     ];

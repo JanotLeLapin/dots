@@ -22,7 +22,7 @@
     nr = "sudo nixos-rebuild switch --impure --flake";
 
     # other
-    l = "lsd -a";
+    l = "ls -a";
     c = "clear";
     v = "nvim";
     h = "hx";
