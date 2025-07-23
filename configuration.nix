@@ -57,6 +57,9 @@
         conf = ./dwm.h;
       });
     };
+    displayManager.sessionCommands = ''
+      dwmblocks &
+    '';
   };
   services.displayManager = {
     defaultSession = "none+dwm";
@@ -93,6 +96,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     helix
+    (dwmblocks.override {
+      conf = ./dwmblocks.h;
+    })
   ];
 
   # fonts
