@@ -128,7 +128,27 @@
 
   programs.dconf.enable = true;
 
-  services.tlp = import ./tlp.nix inputs;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
+  services.thermald.enable = true;
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+        enable_thresholds = true;
+        start_threshold = 0;
+        stop_threshold = 80;
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
