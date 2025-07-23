@@ -128,6 +128,8 @@
     };
   };
 
+  services.geoclue2.enable = true;
+
   programs.dconf.enable = true;
 
   powerManagement = {
