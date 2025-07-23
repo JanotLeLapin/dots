@@ -23,7 +23,7 @@ in {
     ];
   };
 
-  programs = attrImport "programs" [ "helix" "zsh" ];
+  programs = attrImport "programs" [ "helix" "starship" "zsh" ];
 
   xsession.windowManager.i3 = import ./i3.nix inputs;
 
