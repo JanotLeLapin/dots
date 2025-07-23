@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lightinccmd[] = { "xbacklight", "-inc", "5%" };
 static const char *lightdeccmd[] = { "xbacklight", "-dec", "5%" };
+static const char *screencmd[] = { "sh", "-c", "maim -s | xclip -selection clipboard -t image/png", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,6 +92,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = lightinccmd } },
 	{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = lightdeccmd } },
+	{ 0,                            XK_Print,  spawn,          {.v = screencmd } },
 	TAGKEYS(                        XK_ampersand,              0)
 	TAGKEYS(                        XK_eacute,                 1)
 	TAGKEYS(                        XK_quotedbl,               2)
