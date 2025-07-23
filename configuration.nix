@@ -79,6 +79,8 @@
   # Configure console keymap
   console.keyMap = "fr";
 
+  programs.ssh.startAgent = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
   users.users.josephd = {
