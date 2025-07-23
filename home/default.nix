@@ -25,8 +25,6 @@ in {
 
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
 
-  xsession.windowManager.i3 = import ./i3.nix inputs;
-
   gtk = import ./gtk.nix inputs;
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
