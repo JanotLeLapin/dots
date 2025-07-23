@@ -25,23 +25,7 @@ in {
 
   programs = attrImport "programs" [ "zsh" ];
 
-  xsession.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-gaps;
-    config = let
-      modifier = "Mod4";
-    in {
-      inherit modifier;
-      gaps = {
-        inner = 10;
-        outer = 5;
-      };
-      keybindings = pkgs.lib.mkOptionDefault {
-        "${modifier}+Return" = "exec st";
-        "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
-      };
-    };
-  };
+  xsession.windowManager.i3 = import ./i3.nix inputs;
 
   gtk = import ./gtk.nix inputs;
   dconf.settings."org/gnome/desktop/interface" = {
