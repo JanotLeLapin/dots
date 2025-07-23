@@ -20,6 +20,12 @@
           exec ${bitwig-cracked.packages."x86_64-linux".default}/bin/bitwig-studio "$@"
         '';
       })
+      (self: super: {
+        floorp = super.writeShellScriptBin "floorp" ''
+          export MOZ_USE_XINPUT2=1
+          exec ${super.floorp}/bin/floorp "$@"
+        '';
+      })
     ];
   in {
     nixosConfigurations.janotlelapin = nixpkgs.lib.nixosSystem {
