@@ -95,7 +95,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    helix acpi
+    helix acpi xorg.xbacklight
     (dwmblocks.override {
       conf = ./dwmblocks.h;
     })
