@@ -8,7 +8,7 @@ in {
     stateVersion = "25.05";
     packages = with pkgs; [
       nitch # cli
-      pcmanfm pavucontrol blueberry floorp dmenu bitwig-studio # gui
+      pcmanfm pavucontrol blueberry floorp dmenu bitwig-studio discord # gui
       maim xclip # screenshot
       (st.override {
         conf = builtins.readFile ./st.h;
