@@ -14,6 +14,7 @@
       inherit system;
       pkgs = (import nixpkgs { inherit system; });
     }));
+    hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
   in {
     nixosConfigurations.janotlelapin = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
@@ -24,6 +25,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.josephd = import ./home;
         }
+        "${hardware}/lenovo/thinkpad/e14/intel"
       ];
     };
   };
