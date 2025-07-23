@@ -45,7 +45,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    videoDrivers = [ "intel" ]; # TODO: iGPU specific, might want to modularize later
+    videoDrivers = [ "modesetting" ]; # TODO: iGPU specific, might want to modularize later
     enable = true;
     xkb = {
       layout = "fr";
