@@ -51,10 +51,15 @@
       layout = "fr";
       variant = "azerty";
     };
-    windowManager.i3.enable = true;
+    windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.override (old: {
+        conf = ./dwm.h;
+      });
+    };
   };
   services.displayManager = {
-    defaultSession = "none+i3";
+    defaultSession = "none+dwm";
   };
 
   services.libinput = {
