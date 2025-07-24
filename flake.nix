@@ -47,7 +47,6 @@
         ./modules/base.nix
         ./modules/battery.nix
         ./modules/dwm.nix
-        ./modules/fonts.nix
         ./modules/locale.nix
         ./modules/user.nix
         ./modules/gpu/intel.nix
