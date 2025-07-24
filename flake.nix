@@ -28,10 +28,18 @@
       })
     ];
   in {
-    nixosConfigurations.janotlelapin = nixpkgs.lib.nixosSystem {
+    # e14 gen 5 thinkpad
+    nixosConfigurations.e14 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./modules/hardware-configuration.nix
+        ./modules/base.nix
+        ./modules/battery.nix
+        ./modules/dwm.nix
+        ./modules/fonts.nix
+        ./modules/locale.nix
+        ./modules/user.nix
+        ./modules/gpu/intel.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
