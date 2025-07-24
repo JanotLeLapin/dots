@@ -27,10 +27,21 @@
         '';
       })
     ];
+    user = {
+      name = "josephd";
+      full = "Joseph DALY";
+    };
   in {
     # e14 gen 5 thinkpad
-    nixosConfigurations.e14 = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+    nixosConfigurations.e14 = let
+      args = {
+        inherit user;
+        stateVersion = "25.05";
+      };
+    in nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs args;
+      };
       modules = [
         ./modules/hardware-configuration.nix
         ./modules/base.nix
@@ -43,7 +54,8 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.josephd = import ./home;
+          home-manager.extraSpecialArgs = { inherit args; };
+          home-manager.users."${user.name}" = import ./home;
         }
         "${hardware}/lenovo/thinkpad/e14/intel"
         {

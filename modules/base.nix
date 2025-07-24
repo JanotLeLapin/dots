@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, args, ... }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader = {
@@ -25,5 +25,5 @@
 
   services.geoclue2.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = args.stateVersion;
 }

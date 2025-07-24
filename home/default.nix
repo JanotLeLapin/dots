@@ -1,11 +1,11 @@
-{ pkgs, ... } @ inputs: let
+{ pkgs, args, ... } @ inputs: let
   listImport = path: modules: (map (module: import (./. + "/${path}/${module}.nix") inputs) modules);
   attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}.nix") inputs);
 in {
   home = {
-    username = "josephd";
-    homeDirectory = "/home/josephd";
-    stateVersion = "25.05";
+    username = args.user.name;
+    homeDirectory = "/home/${args.user.name}";
+    stateVersion = args.stateVersion;
     packages = with pkgs; [
       nitch # cli
       pcmanfm pavucontrol blueberry floorp dmenu bitwig-studio legcord # gui
