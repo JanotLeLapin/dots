@@ -11,7 +11,7 @@ in {
     homeDirectory = "/home/${args.user.name}";
     stateVersion = args.stateVersion;
     packages = with pkgs; [
-      nitch # cli
+      nitch mpc # cli
       pcmanfm pavucontrol blueberry floorp dmenu bitwig-studio legcord # gui
       maim xclip # screenshot
       (st.override {
@@ -34,7 +34,7 @@ in {
   };
 
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
-  services = attrImport "services" [ "picom" "redshift" "syncthing" ];
+  services = attrImport "services" [ "mpd" "picom" "redshift" "syncthing" ];
 
   gtk = import ./gtk.nix inputs;
   dconf.settings."org/gnome/desktop/interface" = {
