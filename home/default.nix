@@ -1,6 +1,10 @@
 { pkgs, args, ... } @ inputs: let
   listImport = path: modules: (map (module: import (./. + "/${path}/${module}.nix") inputs) modules);
   attrImport = path: modules: pkgs.lib.genAttrs modules (module: import (./. + "/${path}/${module}.nix") inputs);
+  config = source: target: {
+    inherit source target;
+    recursive = true;
+  };
 in {
   home = {
     username = args.user.name;
@@ -20,7 +24,14 @@ in {
           })
         ];
       })
+      (pkgs.writeScriptBin "i2p-browser" ''
+        ${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p
+      '')
     ];
+
+    file = {
+      mullvad-browser = (config ./config/mullvad-browser ".mullvad/mullvadbrowser");
+    };
   };
 
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
