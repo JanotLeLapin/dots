@@ -13,7 +13,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    helix feh acpi xorg.xbacklight
+    helix feh acpi brightnessctl
     (dwmblocks.override {
       conf = ./dwmblocks.h;
     })

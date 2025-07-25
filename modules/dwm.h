@@ -61,8 +61,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *lightinccmd[] = { "xbacklight", "-inc", "5%" };
-static const char *lightdeccmd[] = { "xbacklight", "-dec", "5%" };
+static const char *lightinccmd[] = { "brightnessctl", "s", "+5%" };
+static const char *lightdeccmd[] = { "brightnessctl", "s", "5%-" };
 static const char *screencmd[] = { "sh", "-c", "maim -s | xclip -selection clipboard -t image/png", NULL };
 
 static const Key keys[] = {
