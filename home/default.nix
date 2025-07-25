@@ -36,6 +36,26 @@ in {
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
   services = attrImport "services" [ "mpd" "picom" "redshift" "syncthing" ];
 
+  systemd.user.services.mpd-events = {
+    Unit = {
+      Description = "Listens to mpd events to trigger dwmblocks update";
+      After = [ "mpd.service" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.writeShellScript "mpd-events" ''
+        while true; do
+          ${pkgs.mpc}/bin/mpc idle player
+          ${pkgs.procps}/bin/pkill -RTMIN+10 dwmblocks
+        done
+      ''}";
+      Restart = "always";
+      RestartSec = "5";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
+
   gtk = import ./gtk.nix inputs;
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
