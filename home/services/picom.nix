@@ -4,7 +4,7 @@
   vSync = true;
   inactiveOpacity = 0.9;
   opacityRules = [
-    "95:class_g = 'st-256color'"
+    "80:class_g = 'st-256color'"
     "100:class_g = 'floorp'"
   ];
   settings = {
