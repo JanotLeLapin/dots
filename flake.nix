@@ -12,7 +12,14 @@
   };
   outputs = { nixpkgs, home-manager, bitwig-cracked, ... } @ inputs: let
     hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
-    overlays = [
+    overlays = let
+      firefox-overlay = name: (self: super: {
+        "${name}" = super.writeShellScriptBin "${name}" ''
+          export MOZ_USE_XINPUT2=1
+          exec ${super."${name}"}/bin/${name} "$@"
+        '';
+      });
+    in [
       (self: super: {
         bitwig-studio = super.writeShellScriptBin "bitwig-studio" ''
           export VK_ICD_FILENAMES=""
@@ -20,12 +27,8 @@
           exec ${bitwig-cracked.packages."x86_64-linux".default}/bin/bitwig-studio "$@"
         '';
       })
-      (self: super: {
-        floorp = super.writeShellScriptBin "floorp" ''
-          export MOZ_USE_XINPUT2=1
-          exec ${super.floorp}/bin/floorp "$@"
-        '';
-      })
+      (firefox-overlay "floorp")
+      (firefox-overlay "mullvad-browser")
     ];
     user = {
       name = "josephd";
