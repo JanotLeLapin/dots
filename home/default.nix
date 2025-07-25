@@ -24,10 +24,9 @@ in {
           })
         ];
       })
-      (pkgs.writeScriptBin "i2p-browser" ''
-        ${pkgs.mullvad-browser}/bin/mullvad-browser -P i2p
-      '')
-    ];
+    ] ++ (map (name: (pkgs.writeScriptBin "${name}-browser" ''
+      ${pkgs.mullvad-browser}/bin/mullvad-browser -P ${name}
+    '')) [ "i2p" "tor" ]);
 
     file = {
       mullvad-browser = (config ./config/mullvad-browser ".mullvad/mullvadbrowser");
