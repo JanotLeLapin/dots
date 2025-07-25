@@ -52,8 +52,8 @@
         ./modules/dwm.nix
         ./modules/locale.nix
         ./modules/user.nix
-        ./modules/containers/i2p.nix
-        ./modules/containers/tor/client.nix
+        # ./modules/containers/i2p.nix
+        # ./modules/containers/tor/client.nix
         ./modules/gpu/intel.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
