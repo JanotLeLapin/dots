@@ -8,6 +8,9 @@
     enable = true;
     package = pkgs.dwm.override (old: {
       conf = ./dwm.h;
+      patches = [
+        ./dwm-gap.diff
+      ];
     });
   };
   services.xserver.displayManager.sessionCommands = ''
