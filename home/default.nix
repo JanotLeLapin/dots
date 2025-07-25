@@ -34,7 +34,7 @@ in {
   };
 
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
-  services = attrImport "services" [ "picom" "redshift" ];
+  services = attrImport "services" [ "picom" "redshift" "syncthing" ];
 
   gtk = import ./gtk.nix inputs;
   dconf.settings."org/gnome/desktop/interface" = {
