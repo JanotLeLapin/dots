@@ -34,7 +34,7 @@ in {
   };
 
   programs = attrImport "programs" [ "helix" "keychain" "starship" "zsh" ];
-  services = attrImport "services" [ "mpd" "mpd-discord-rpc" "picom" "redshift" "syncthing" ];
+  services = attrImport "services" [ "mpd" "picom" "redshift" "syncthing" ];
 
   systemd.user.services.mpd-events = {
     Unit = {
