@@ -10,7 +10,7 @@ in {
     stateVersion = args.stateVersion;
     packages = with pkgs; [
       nitch mpc # cli
-      pcmanfm pavucontrol blueberry floorp dmenu bitwig-studio legcord # gui
+      pcmanfm pavucontrol blueberry firefox dmenu bitwig-studio legcord # gui
       maim xclip # screenshot
       (st.override {
         conf = builtins.readFile ./st.h;

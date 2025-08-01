@@ -28,6 +28,7 @@
         '';
       })
       (firefox-overlay "floorp")
+      (firefox-overlay "firefox")
       (firefox-overlay "mullvad-browser")
     ];
     user = {
