@@ -34,6 +34,12 @@
       name = "josephd";
       full = "Joseph DALY";
     };
+    homeManagerConfig = paths: { pkgs, ... } @ inputs: let
+      evaluated = map (x: import x inputs) paths;
+      merged = builtins.foldl' (acc: current:
+        inputs.lib.recursiveUpdate acc current
+      ) {} evaluated;
+    in merged;
   in {
     # e14 gen 5 thinkpad
     nixosConfigurations.e14 = let
@@ -59,7 +65,19 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit args; };
-          home-manager.users."${user.name}" = import ./home;
+          home-manager.users."${user.name}" = homeManagerConfig [
+            ./modules/home/base.nix
+            ./modules/home/gtk.nix
+            ./modules/home/helix.nix
+            ./modules/home/keychain.nix
+            ./modules/home/starship.nix
+            ./modules/home/zsh.nix
+
+            # ./modules/home/mpd.nix
+            # ./modules/home/picom.nix
+            ./modules/home/redshift.nix
+            # ./modules/home/syncthing.nix
+          ];
         }
         "${hardware}/lenovo/thinkpad/e14/intel"
         {
