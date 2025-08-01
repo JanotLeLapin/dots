@@ -58,8 +58,6 @@
         ./modules/dwm.nix
         ./modules/locale.nix
         ./modules/user.nix
-        # ./modules/containers/i2p.nix
-        # ./modules/containers/tor/client.nix
         ./modules/gpu/intel.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
@@ -80,6 +78,39 @@
           ];
         }
         "${hardware}/lenovo/thinkpad/e14/intel"
+        {
+          nixpkgs.overlays = overlays;
+          nixpkgs.config.allowUnfree = true;
+        }
+      ];
+    };
+    nixosConfigurations.headless = let
+      args = {
+        inherit user;
+        stateVersion = "25.05";
+      };
+    in nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs args;
+      };
+      modules = [
+        ./modules/hardware-configuration.nix
+        ./modules/base.nix
+        ./modules/locale.nix
+        ./modules/user.nix
+        ./modules/containers/i2p.nix
+        ./modules/containers/tor/relay.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit args; };
+          home-manager.users."${user.name}" = homeManagerConfig [
+            ./modules/home/base.nix
+            ./modules/home/helix.nix
+            ./modules/home/starship.nix
+            ./modules/home/zsh.nix
+          ];
+        }
         {
           nixpkgs.overlays = overlays;
           nixpkgs.config.allowUnfree = true;
