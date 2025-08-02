@@ -10,7 +10,7 @@ in {
     stateVersion = args.stateVersion;
     packages = with pkgs; [
       nitch mpc # cli
-      pcmanfm pavucontrol blueberry firefox dmenu bitwig-studio legcord # gui
+      pcmanfm pavucontrol blueberry firefox dmenu legcord # gui
       rimworld # games
       maim xclip # screenshot
       (st.override {
