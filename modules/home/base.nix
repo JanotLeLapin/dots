@@ -11,6 +11,7 @@ in {
     packages = with pkgs; [
       nitch mpc # cli
       pcmanfm pavucontrol blueberry firefox dmenu bitwig-studio legcord # gui
+      rimworld # games
       maim xclip # screenshot
       (st.override {
         conf = builtins.readFile ./st.h;
