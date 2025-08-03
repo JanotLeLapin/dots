@@ -5,12 +5,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rimworld-cracked = {
       url = "git+https://codeberg.org/JanotLeLapin/rimworld-cracked-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, rimworld-cracked, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, sops-nix, rimworld-cracked, ... } @ inputs: let
     hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
     overlays = let
       firefox-overlay = name: (self: super: {
@@ -68,11 +72,15 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit args; };
+          home-manager.sharedModules = [
+            sops-nix.homeManagerModules.sops
+          ];
           home-manager.users."${user.name}" = homeManagerConfig [
             ./modules/home/base.nix
             ./modules/home/gtk.nix
             ./modules/home/helix.nix
             ./modules/home/keychain.nix
+            ./modules/home/sops.nix
             ./modules/home/starship.nix
             ./modules/home/zsh.nix
 
