@@ -43,12 +43,9 @@
       name = "josephd";
       full = "Joseph DALY";
     };
-    homeManagerConfig = paths: { pkgs, ... } @ inputs: let
-      evaluated = map (x: import x inputs) paths;
-      merged = builtins.foldl' (acc: current:
-        inputs.lib.recursiveUpdate acc current
-      ) {} evaluated;
-    in merged;
+    homeManagerConfig = paths: _: {
+      imports = paths;
+    };
   in {
     # e14 gen 5 thinkpad
     nixosConfigurations.e14 = let
