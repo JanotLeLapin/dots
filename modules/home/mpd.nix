@@ -1,4 +1,6 @@
 { pkgs, args, ... }: {
+  home.packages = with pkgs; [ mpc ];
+
   services.mpd = {
     enable = true;
     musicDirectory = "/home/${args.user.name}/music";

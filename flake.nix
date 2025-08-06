@@ -75,6 +75,7 @@
           home-manager.users."${user.name}" = homeManagerConfig [
             ./modules/home/base.nix
             ./modules/home/gtk.nix
+            ./modules/home/gui.nix
             ./modules/home/helix.nix
             ./modules/home/keychain.nix
             ./modules/home/sops.nix
