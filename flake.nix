@@ -13,8 +13,12 @@
       url = "git+https://codeberg.org/JanotLeLapin/rimworld-cracked-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    polymc = {
+      url = "github:PolyMC/PolyMC";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { nixpkgs, home-manager, sops-nix, rimworld-cracked, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, sops-nix, rimworld-cracked, polymc, ... } @ inputs: let
     hardware = builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; };
     overlays = let
       firefox-overlay = name: (self: super: {
@@ -35,6 +39,7 @@
           ];
         });
       })
+      polymc.overlay
       (firefox-overlay "floorp")
       (firefox-overlay "firefox")
       (firefox-overlay "mullvad-browser")
