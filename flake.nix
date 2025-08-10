@@ -70,6 +70,7 @@
         ./modules/locale.nix
         ./modules/user.nix
         ./modules/gpu/intel.nix
+        ./modules/transmission.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -116,6 +117,7 @@
         ./modules/user.nix
         ./modules/containers/i2p.nix
         ./modules/containers/tor/relay.nix
+        ./modules/transmission.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
