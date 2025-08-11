@@ -64,7 +64,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lightinccmd[] = { "brightnessctl", "s", "+5%" };
 static const char *lightdeccmd[] = { "brightnessctl", "s", "5%-" };
-static const char *screencmd[] = { "sh", "-c", "maim -s | xclip -selection clipboard -t image/png", NULL };
+static const char *screencmd[] = { "sh", "-c", "maim -s -o | xclip -selection clipboard -t image/png", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
