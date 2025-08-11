@@ -14,7 +14,8 @@
       ../modules/hardware-configuration.nix
       ../modules/base.nix
       ../modules/battery.nix
-      ../modules/dwm.nix
+      ../modules/dwm
+      ../modules/libinput.nix
       ../modules/locale.nix
       ../modules/mullvad.nix
       ../modules/user.nix

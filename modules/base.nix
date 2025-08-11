@@ -14,9 +14,6 @@
 
   environment.systemPackages = with pkgs; [
     helix feh acpi brightnessctl
-    (dwmblocks.override {
-      conf = ./dwmblocks.h;
-    })
   ];
 
   fonts = {
