@@ -4,9 +4,9 @@
 
 static const Block blocks[] = {
 	/* Icon */ /* Command */ /*Update Interval*/ /*Update Signal*/
-	{"",       MUSIC_CMD,    0,                  10},
-	{"",       BAT_CMD,      30,                 0},
-	{"",       DATE_CMD,     60,                 0},
+	{"󰝚 ",       MUSIC_CMD,    0,                  10},
+	{"󰁹 ",       BAT_CMD,      120,                0},
+	{"󰅐 ",       DATE_CMD,     60,                 0},
 };
 
 /* sets delimiter between status commands. NULL character ('\0') means no delimiter. */
