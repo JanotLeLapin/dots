@@ -39,10 +39,15 @@
             ../modules/home/starship.nix
             ../modules/home/zsh.nix
 
+            # SERVICES
             # ../modules/home/mpd.nix
             ../modules/home/picom.nix
             ../modules/home/redshift.nix
             # ../modules/home/syncthing.nix
+
+            # GAMES
+            ../modules/home/games/rimworld.nix
+            ../modules/home/games/minecraft.nix
           ];
         };
       }

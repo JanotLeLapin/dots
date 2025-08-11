@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     pcmanfm pavucontrol blueberry firefox dmenu legcord # gui
-    rimworld polymc # games
     maim xclip # screenshot
     (st.override {
       conf = builtins.readFile ./st.h;
