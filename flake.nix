@@ -68,6 +68,7 @@
         ./modules/battery.nix
         ./modules/dwm.nix
         ./modules/locale.nix
+        ./modules/mullvad.nix
         ./modules/user.nix
         ./modules/gpu/intel.nix
         ./modules/transmission.nix
