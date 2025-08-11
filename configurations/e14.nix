@@ -39,7 +39,7 @@
             ../modules/home/zsh.nix
 
             # ../modules/home/mpd.nix
-            # ../modules/home/picom.nix
+            ../modules/home/picom.nix
             ../modules/home/redshift.nix
             # ../modules/home/syncthing.nix
           ];
